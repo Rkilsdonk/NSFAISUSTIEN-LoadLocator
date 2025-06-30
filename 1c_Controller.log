@@ -1,0 +1,11 @@
+[2025-06-28 21:55:35.365] [console] [warning] commWarning||EVController Federate (0)[connecting]::zmq broker connection timed out, trying again (2)
+[2025-06-28 21:55:35.365] [console] [warning] commWarning||EVController Federate (0)[connecting]::sending message to tcp://127.0.0.1:23405
+[2025-06-28 21:55:55.400] [console] [error] commERROR||EVController Federate (0)[connecting]::zmq broker connection timed out after trying 5 times (2)
+[2025-06-28 21:55:55.401] [console] [error] commERROR||EVController Federate (0)[connecting]::receiver connection failure
+Traceback (most recent call last):
+  File "C:\Users\bulld\Documents\AISustien\Helics_RL\HELICS-Examples\user_guide_examples\misc\gridlabd_example_1\1bc_EV_Controller.py", line 38, in <module>
+    fed = h.helicsCreateCombinationFederateFromConfig(f"{case_num}_Control.json")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bulld\AppData\Roaming\Python\Python312\site-packages\helics\capi.py", line 3757, in helicsCreateCombinationFederateFromConfig
+    raise HelicsException("[" + str(err.error_code) + "] " + ffi.string(err.message).decode())
+helics.capi.HelicsException: [-1] Unable to connect to broker->unable to register federate

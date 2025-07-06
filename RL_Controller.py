@@ -95,28 +95,25 @@ if __name__ == "__main__":
         ############################### Subscribing to Feeder Load from to GridLAB-D ###################################
         for i in range(0, subkeys_count):
             sub = subid["m{}".format(i)]
-            demand = h.helicsInputGetComplex(sub)
-            rload = demand.real
-            iload = demand.imag
-            feeder_real_power.append(rload)
+            demand = h.helicsInputGetString(sub)
+            
 
-        for i in range(0, endpoint_count):
-            end_point = endid["m{}".format(i)]
-            ####################### Clearing all pending messages and stroing the most recent one ######################
-            """ Note: In case GridLAB-D and EV Controller are running in different intervals 
-                        there might be pending messages which gets stored in the endpoint buffer  """
-            while h.helicsEndpointHasMessage(end_point):
-                end_point_msg_obj = h.helicsEndpointGetMessage(end_point)
-                # logger.info("removing pending messages")
+        #for i in range(0, endpoint_count):
+         #   end_point = endid["m{}".format(i)]
+         #   ####################### Clearing all pending messages and stroing the most recent one ######################
+         #   """ Note: In case GridLAB-D and EV Controller are running in different intervals 
+         #               there might be pending messages which gets stored in the endpoint buffer  """
+         #   while h.helicsEndpointHasMessage(end_point):
+         #       end_point_msg_obj = h.helicsEndpointGetMessage(end_point)
+         #       # logger.info("removing pending messages")
 
-            EV_now = complex(h.helicsMessageGetString(end_point_msg_obj))
-            EV_name = end_point.name.split('/')[-1]
-            if EV_name not in EV_data:
-                    EV_data[EV_name] = []
-            EV_data[EV_name].append(EV_now.real / 1000)
+##           EV_name = end_point.name.split('/')[-1]
+ #           if EV_name not in EV_data:
+  #                  EV_data[EV_name] = []
+   #         EV_data[EV_name].append(EV_now.real / 1000)
 
         logger.info("{}: Federate Granted Time = {}".format(federate_name, grantedtime))
-        logger.info("{}: Total Feeder Load is {} kW + {} kVARj ".format(federate_name, round(rload/1000,2), round(iload/1000,2)))
+        logger.info(demand)
 
         # if feeder_real_power[-1] > feeder_limit_upper:
         #     logger.info("{}: Warning !!!! Feeder OverLimit ---> Total Feeder Load is over the Feeder Upper Limit".format(federate_name))
@@ -148,27 +145,26 @@ if __name__ == "__main__":
         #     else:
         #         logger.info("{}: All EVs are turned on".format(federate_name))
 
-        # if plotting:
-        #     ax['Feeder'].clear()
-        #     ax['Feeder'].plot(time_sim, feeder_real_power)
-        #     ax['Feeder'].plot(np.linspace(0,24,25), feeder_limit_upper*np.ones(25), 'r--')
-        #     ax['Feeder'].plot(np.linspace(0,24,25), feeder_limit_lower*np.ones(25), 'g--')
-        #     ax['Feeder'].set_ylabel("Feeder Load (kW)")
-        #     ax['Feeder'].set_xlabel("Time (Hrs)")
-        #     ax['Feeder'].set_xlim([0, 24])
-        #     ax['Feeder'].grid()
-        #     for keys in EV_data:
-        #         ax[keys].clear()
-        #         ax[keys].plot(time_sim, EV_data[keys])
-        #         ax[keys].set_ylabel("EV Output (kW)")
-        #         ax[keys].set_xlabel("Time (Hrs)")
-        #         ax[keys].set_title(keys)
-        #         ax[keys].set_xlim([0, 24])
-        #         ax[keys].grid()
-        #     plt.show(block=False)
-        #     plt.pause(0.01)
-            
-            if t == (total_inteval - update_interval):
+        if plotting:
+             ax['Feeder'].clear()
+             ax['Feeder'].plot(time_sim, feeder_real_power)
+             ax['Feeder'].plot(np.linspace(0,24,25), feeder_limit_upper*np.ones(25), 'r--')
+             ax['Feeder'].plot(np.linspace(0,24,25), feeder_limit_lower*np.ones(25), 'g--')
+             ax['Feeder'].set_ylabel("Feeder Load (kW)")
+             ax['Feeder'].set_xlabel("Time (Hrs)")
+             ax['Feeder'].set_xlim([0, 24])
+             ax['Feeder'].grid()
+             for keys in EV_data:
+                 ax[keys].clear()
+                 ax[keys].plot(time_sim, EV_data[keys])
+                 ax[keys].set_ylabel("EV Output (kW)")
+                 ax[keys].set_xlabel("Time (Hrs)")
+                 ax[keys].set_title(keys)
+                 ax[keys].set_xlim([0, 24])
+                 ax[keys].grid()
+             plt.show(block=False)
+             plt.pause(0.01)
+             if t == (total_inteval - update_interval):
                 plt.tight_layout()
                 plt.savefig(f"./output/{case_num}_EV_plot.png", dpi=200)
 

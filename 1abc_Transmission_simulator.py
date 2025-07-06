@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     #################################  Registering  federate from json  ########################################
     case_num = str(args.case_num[0])
-    fed = h.helicsCreateValueFederateFromConfig(f"{case_num}_Transmission_config.json")
+    fed = h.helicsCreateValueFederateFromConfig("1c_Transmission_config.json")
     #h.helicsFederateRegisterInterfaces(fed, "1a_Transmission_config.json")
     federate_name = h.helicsFederateGetName(fed)
     logger.info("HELICS Version: {}".format(h.helicsGetVersion()))

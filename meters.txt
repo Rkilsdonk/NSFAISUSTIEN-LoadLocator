@@ -1,0 +1,632 @@
+object triplex_meter {
+    name l1_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l3_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l4_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l5_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l6_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l7_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l9_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l10_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l11_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l12_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l16_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l17_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l19_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l20_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l22_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l24_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l28_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l29_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l30_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l31_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l32_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l33_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l34_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l37_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l38_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l39_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l41_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l42_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l43_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l45_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l46_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l50_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l51_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l52_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l53_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l55_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l56_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l58_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l59_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l60_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l62_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l63_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l64_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l66_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l68_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l69_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l70_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l71_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l73_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l74_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l75_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l77_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l79_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l80_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l82_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l83_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l84_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l85_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l86_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l87_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l88_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l90_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l92_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l94_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l95_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l96_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l98_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l99_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l100_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l102_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l103_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l104_tm;
+    phases CS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l106_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l107_tm;
+    phases BS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l109_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l111_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l112_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l113_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};
+object triplex_meter {
+    name l114_tm;
+    phases AS;
+    voltage_1 120.0;
+    voltage_2 120.0;
+    voltage_N 0;
+    nominal_voltage 120.0;
+};

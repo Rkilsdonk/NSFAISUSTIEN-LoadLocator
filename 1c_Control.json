@@ -53,28 +53,12 @@
 		}
 	],
 	"filters": [
-		{
-			"name": "EVfilters",
-			"sourcetargets": [
-				"EV_Controller/EV6",
-				"EV_Controller/EV5",
-				"EV_Controller/EV4",
-				"EV_Controller/EV3",
-				"EV_Controller/EV2",
-				"EV_Controller/EV1"
-			],
-			"mode": "source",
-			"operation": "delay",
-			"properties": {
-				"name": "delay",
-				"value": 3600
-			}
-		}
+		
 	],
 	"subscriptions": [
 		{
-			"key": "IEEE_123_feeder_0/totalLoad",
-			"type": "complex",
+			"key": "IEEE_123_feeder_0/statedump",
+			"type": "string",
 			"required": true
 		}
 	]

@@ -13,11 +13,17 @@ import numpy as np
 import argparse
 import torch as pt
 import torch_geometric as ptg
+import json as json
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
-
+def parse_complex(s: str) -> complex:
+    # drop the trailing “ V” and parse Python complex
+    s = s.strip()
+    if s.endswith("V"):
+        s = s[:-1].strip()
+    return complex(s)
 
 def destroy_federate(fed):
     grantedtime = h.helicsFederateRequestTime(fed, h.HELICS_TIME_MAXTIME)
@@ -27,7 +33,7 @@ def destroy_federate(fed):
 
 
 if __name__ == "__main__":
-
+    device = pt.accelerator.current_accelerator().type if pt.accelerator.is_available() else "cpu"
     parser = argparse.ArgumentParser(description='')
     parser.add_argument('-c', '--case_num',
                         help='Case number, must be either "1b" or "1c"',
@@ -64,7 +70,7 @@ if __name__ == "__main__":
     hours = 24
     total_inteval = int(60 * 60 * hours)
     grantedtime = -1
-    update_interval = 5 * 60 ## Adjust this to change EV update interval
+    update_interval = 60 ## Adjust this to change EV update interval
     feeder_limit_upper = 4 * (1000 * 1000) ## Adjust this to change upper limit to trigger EVs
     feeder_limit_lower = 2.7 * (1000 * 1000) ## Adjust this to change lower limit to trigger EVs
     k = 0
@@ -85,19 +91,66 @@ if __name__ == "__main__":
     #    ax['EV5'] = plt.subplot(335)
     #    ax['EV6'] = plt.subplot(336)
 
-
+    voltageTimeSeries=pt.ones([1,1,1])
     for t in range(0, total_inteval, update_interval):
 
         while grantedtime < t:
             grantedtime = h.helicsFederateRequestTime(fed, t)
 
         time_sim.append(t / 3600)
-        ############################### Subscribing to Feeder Load from to GridLAB-D ###################################
+        ############################### Subscribing to streamed data from to GridLAB-D ###################################
         for i in range(0, subkeys_count):
             sub = subid["m{}".format(i)]
-            demand = h.helicsInputGetString(sub)
-            
+            inputvolts = h.helicsInputGetString(sub)
+        
+        if(t==0):
+            #initialize ML model
+            # 1) parse JSON → dict
+            data = json.loads(inputvolts)
 
+# 2) fix ordering of meters & phases
+            meter_keys = sorted(data.keys())
+            phase_keys = [
+            "measured_voltage_1",
+            "measured_voltage_2",
+            "measured_voltage_N",
+            ]
+
+# 3) build a nested list: [ [ [real, imag], … ], … ]
+            records = []
+            for m in meter_keys:
+                vals = []
+                for ph in phase_keys:
+                    c = parse_complex(data[m][ph])
+                    vals.append([c.real, c.imag])
+                records.append(vals)
+            t_real_imag = pt.tensor(records, dtype=pt.float32)
+            voltageTimeSeries=t_real_imag.unsqueeze(0)
+        if(t!=0):
+            data = json.loads(inputvolts)
+
+# 2) fix ordering of meters & phases
+            meter_keys = sorted(data.keys())
+            phase_keys = [
+            "measured_voltage_1",
+            "measured_voltage_2",
+            "measured_voltage_N",
+            ]
+
+# 3) build a nested list: [ [ [real, imag], … ], … ]
+            records = []
+            for m in meter_keys:
+                vals = []
+                for ph in phase_keys:
+                    c = parse_complex(data[m][ph])
+                    vals.append([c.real, c.imag])
+                records.append(vals)
+            t_real_imag = pt.tensor(records, dtype=pt.float32)
+            voltageTimeSeries=pt.cat((voltageTimeSeries,t_real_imag.unsqueeze(0)))
+            #train
+            #infer
+            #report
+            
         #for i in range(0, endpoint_count):
          #   end_point = endid["m{}".format(i)]
          #   ####################### Clearing all pending messages and stroing the most recent one ######################
@@ -113,7 +166,7 @@ if __name__ == "__main__":
    #         EV_data[EV_name].append(EV_now.real / 1000)
 
         logger.info("{}: Federate Granted Time = {}".format(federate_name, grantedtime))
-        logger.info(demand)
+        logger.info(inputvolts)
 
         # if feeder_real_power[-1] > feeder_limit_upper:
         #     logger.info("{}: Warning !!!! Feeder OverLimit ---> Total Feeder Load is over the Feeder Upper Limit".format(federate_name))

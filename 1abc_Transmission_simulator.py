@@ -195,7 +195,7 @@ if __name__ == "__main__":
 
         ######################### Plotting the Voltages and Load of the Co-SIM bus ##############################################
 
-        if x > 0:
+        if False:#x > 0:
             ax1.clear()
             ax1.plot(pf_time, voltage_plot, "r--")
             ax1.set_xlim([0, 25])
@@ -212,9 +212,9 @@ if __name__ == "__main__":
             plt.pause(0.01)
         x = x + 1
         
-        if t == (total_inteval - pf_interval):
-            plt.tight_layout()
-            plt.savefig(f"./output/{case_num}_transmission_plot.png", dpi=200)
+        #if t == (total_inteval - pf_interval):
+        #    plt.tight_layout()
+        #    plt.savefig(f"./output/{case_num}_transmission_plot.png", dpi=200)
 
     ##########################   Creating headers and Printing results to CSVs #####################################
 

@@ -1,0 +1,8482 @@
+module tape;
+
+clock {
+	starttime '2000-01-01 0:00:00';
+	stoptime '2000-01-01 0:00:01';
+};
+
+#set suppress_repeat_messages=0;
+
+
+// module powerflow {
+	// solver_method FBS;
+	// default_maximum_voltage_error 1e-12;
+	// line_capacitance TRUE;
+// };
+
+
+
+module powerflow {
+	solver_method NR;
+	NR_iteration_limit 100;
+	line_capacitance TRUE;
+};
+
+
+
+object voltdump {
+	filename vdump29.csv;
+	mode polar;
+};
+
+object currdump {
+	filename cdump29.csv;
+	mode polar;
+};
+
+object node {
+	name nbus1001;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1002;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1003;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1004;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1005;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1006;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1007;
+	phases ABN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1008;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1009;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1010;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1011;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1012;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1013;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1014;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1015;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1016;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1017;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2001;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2002;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2003;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2004;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2005;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2006;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2007;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2008;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2009;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2010;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2011;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2012;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2013;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2014;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2015;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2016;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2017;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2018;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2019;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2020;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2021;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2022;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2023;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2024;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2025;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2026;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2027;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2028;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2029;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2030;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2031;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2032;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2033;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2034;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2035;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2036;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2037;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2038;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2039;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2040;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2041;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2042;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2043;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2044;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2045;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2046;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2047;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2048;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2049;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2050;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2051;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2052;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2053;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2054;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2055;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2056;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2057;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2058;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2059;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus2060;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3001;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3003;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3002;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3004;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3005;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3006;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3007;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3008;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3009;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3010;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3011;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3012;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3013;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3014;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3015;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3016;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3017;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3018;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3019;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3020;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3021;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3022;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3023;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3024;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3025;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3026;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3027;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3028;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3029;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3030;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3035;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3036;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3037;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3038;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3039;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3053;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3054;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3055;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3056;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3057;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3058;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3059;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3060;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3061;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3062;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3063;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3064;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3065;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3066;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3067;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3040;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3044;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3045;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3041;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3042;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3043;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3046;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3047;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3048;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3049;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3050;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3051;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3052;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3031;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3032;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3033;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3034;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3068;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3069;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3070;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3071;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3072;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3073;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3074;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3075;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3076;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3077;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3078;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3079;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3080;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3081;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3082;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3083;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3084;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3085;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3086;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3087;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3088;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3089;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3090;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3091;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3092;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3093;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3094;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3095;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3096;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3097;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3098;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3099;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3100;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3101;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3102;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3103;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3104;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3105;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3106;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3107;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3108;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3109;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3110;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3111;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3112;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3113;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3114;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3115;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3116;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3117;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3118;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3119;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3120;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3121;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3122;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3123;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3124;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3125;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3126;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3127;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3128;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3129;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3130;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3131;
+	phases BN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3132;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3133;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3134;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3135;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3136;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3137;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3138;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3139;
+	phases AN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3140;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3141;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3142;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3143;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3148;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3149;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3150;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3151;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3152;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3153;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3154;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3155;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3156;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3144;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3145;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3146;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3147;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3157;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3158;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3159;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3160;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3161;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus3162;
+	phases CN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nbus1;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+
+object node {
+	name GLMswing;
+	phases ABCN;
+	bustype SWING;
+	nominal_voltage 39837.16857408418;
+};
+
+object node {
+	name neq_source_bus;
+	phases ABCN;
+	nominal_voltage 39837.16857408418;
+};
+
+object underground_line {
+	length 5280;
+	configuration line_Vsource;
+	name vsource_inpedance;
+	from GLMswing;
+	to neq_source_bus;
+	phases ABC;
+};
+
+object node {
+	name nbus_xfmr;
+	phases ABCN;
+	nominal_voltage 7967.433714816836;
+};
+
+object node {
+	name nt_bus1003_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus1004_l;
+	phases ABCN;
+	nominal_voltage 120.0;
+};
+
+object node {
+	name nt_bus1005_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus1006_l;
+	phases ABD;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus1007_l;
+	phases ABD;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus1008_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus1009_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus1010_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus1011_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus1012_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus1013_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus1014_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus1015_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus1016_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus1017_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2002_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2003_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2005_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2008_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2009_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2010_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2011_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2014_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2015_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2016_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2017_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2018_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2020_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2022_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2023_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2024_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2025_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2028_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2029_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2030_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2031_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2032_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2034_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2035_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2037_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2040_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2041_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2042_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2043_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2045_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2046_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2047_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2048_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2049_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2050_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2051_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2052_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2053_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2054_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2055_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2056_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus2058_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2059_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus2060_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3002_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3004_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3006_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3007_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3009_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3010_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3011_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3012_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3013_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3014_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3016_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3017_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3018_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3019_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3020_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3021_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3023_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3024_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3025_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3026_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3027_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3028_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3029_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3031_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3032_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3033_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3034_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3035_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3036_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3037_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3038_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3039_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3041_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3042_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3043_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3044_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3045_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3047_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3048_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3049_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3050_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3051_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3052_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3054_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3056_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3057_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3058_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3059_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3060_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3061_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3062_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3063_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3064_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3065_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3066_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3067_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3070_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3071_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3072_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3073_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3074_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3077_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3078_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object node {
+	name nt_bus3081_l;
+	phases ABCN;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3083_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3084_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3085_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3086_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3087_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3088_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3089_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3090_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3091_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3093_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3094_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3095_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3096_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3097_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3098_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3099_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3101_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3102_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3103_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3104_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3105_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3106_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3108_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3109_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3110_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3111_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3112_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3114_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3115_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3116_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3117_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3120_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3121_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3122_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3123_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3124_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3125_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3126_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3127_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3128_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3129_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3130_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3131_l;
+	phases BS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3132_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3134_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3135_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3136_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3137_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3138_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3139_l;
+	phases AS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3141_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3142_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3143_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3144_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3145_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3146_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3147_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3148_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3149_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3150_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3151_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3152_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3153_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3154_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3155_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3157_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3158_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3159_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3160_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3161_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object triplex_node {
+	name nt_bus3162_l;
+	phases CS;
+	nominal_voltage 120;
+};
+
+object capacitor {
+	name ncap_201;
+	nominal_voltage 7967.433714816836;
+	parent nbus2038;
+	capacitor_A 16666.666666666666;
+	switchA CLOSED;
+	capacitor_B 16666.666666666666;
+	switchB CLOSED;
+	capacitor_C 16666.666666666666;
+	switchC CLOSED;
+	phases ABCN;
+	phases_connected ABCN;
+	control MANUAL;
+};
+
+object capacitor {
+	name ncap_301;
+	nominal_voltage 7967.433714816836;
+	parent nbus3079;
+	capacitor_A 16666.666666666666;
+	switchA CLOSED;
+	capacitor_B 16666.666666666666;
+	switchB CLOSED;
+	capacitor_C 16666.666666666666;
+	switchC CLOSED;
+	phases ABCN;
+	phases_connected ABCN;
+	control MANUAL;
+};
+
+object load {
+	name nload_load_1003;
+	nominal_voltage 120;
+	parent nt_bus1003_l;
+	constant_power_A 5096.666666666667+1277.345072121511j;
+	constant_power_B 5096.666666666667+1277.345072121511j;
+	constant_power_C 5096.666666666667+1277.345072121511j;
+};
+
+object load {
+	name nload_load_1004;
+	nominal_voltage 120.0;
+	parent nt_bus1004_l;
+	constant_power_A 2297.3333333333335+1112.64931551416j;
+	constant_power_B 2297.3333333333335+1112.64931551416j;
+	constant_power_C 2297.3333333333335+1112.64931551416j;
+};
+
+object load {
+	name nload_load_1005;
+	nominal_voltage 120;
+	parent nt_bus1005_l;
+	constant_power_A 1638.6666666666667+647.6425072952574j;
+	constant_power_B 1638.6666666666667+647.6425072952574j;
+	constant_power_C 1638.6666666666667+647.6425072952574j;
+};
+
+object load {
+	name nload_load_1006;
+	nominal_voltage 120;
+	parent nt_bus1006_l;
+	constant_power_AB 5040+2296.291839688011j;
+};
+
+object load {
+	name nload_load_1007;
+	nominal_voltage 120;
+	parent nt_bus1007_l;
+	constant_power_AB 4163+2016.23292243998j;
+};
+
+object load {
+	name nload_load_1008;
+	nominal_voltage 120;
+	parent nt_bus1008_l;
+	constant_power_A 4698.666666666667+2140.7757785874473j;
+	constant_power_B 4698.666666666667+2140.7757785874473j;
+	constant_power_C 4698.666666666667+2140.7757785874473j;
+};
+
+object load {
+	name nload_load_1009;
+	nominal_voltage 120;
+	parent nt_bus1009_l;
+	constant_power_A 5693.666666666666+2250.2810551485536j;
+	constant_power_B 5693.666666666666+2250.2810551485536j;
+	constant_power_C 5693.666666666666+2250.2810551485536j;
+};
+
+object load {
+	name nload_load_1010;
+	nominal_voltage 120;
+	parent nt_bus1010_l;
+	constant_power_A 2378.6666666666665+940.1092213301375j;
+	constant_power_B 2378.6666666666665+940.1092213301375j;
+	constant_power_C 2378.6666666666665+940.1092213301375j;
+};
+
+object triplex_load {
+	name nload_load_1011;
+	nominal_voltage 120;
+	parent nt_bus1011_l;
+	phases AS;
+	constant_power_12 3125+1027.1378286839472j;
+};
+
+object triplex_load {
+	name nload_load_1012;
+	nominal_voltage 120;
+	parent nt_bus1012_l;
+	phases BS;
+	constant_power_12 3083+1118.9795800587706j;
+};
+
+object load {
+	name nload_load_1013;
+	nominal_voltage 120;
+	parent nt_bus1013_l;
+	constant_power_A 512.3333333333333+149.43055555555554j;
+	constant_power_B 512.3333333333333+149.43055555555554j;
+	constant_power_C 512.3333333333333+149.43055555555554j;
+};
+
+object triplex_load {
+	name nload_load_1014;
+	nominal_voltage 120;
+	parent nt_bus1014_l;
+	phases BS;
+	constant_power_12 458+195.1071829903818j;
+};
+
+object triplex_load {
+	name nload_load_1015;
+	nominal_voltage 120;
+	parent nt_bus1015_l;
+	phases BS;
+	constant_power_12 793+161.0255178827654j;
+};
+
+object triplex_load {
+	name nload_load_1016;
+	nominal_voltage 120;
+	parent nt_bus1016_l;
+	phases CS;
+	constant_power_12 3083+1493.1650492150993j;
+};
+
+object triplex_load {
+	name nload_load_1017;
+	nominal_voltage 120;
+	parent nt_bus1017_l;
+	phases CS;
+	constant_power_12 2131+621.5416666666667j;
+};
+
+object load {
+	name nload_load_2002;
+	nominal_voltage 120;
+	parent nt_bus2002_l;
+	constant_power_A 9313.333333333334+3380.288622212353j;
+	constant_power_B 9313.333333333334+3380.288622212353j;
+	constant_power_C 9313.333333333334+3380.288622212353j;
+};
+
+object load {
+	name nload_load_2003;
+	nominal_voltage 120;
+	parent nt_bus2003_l;
+	constant_power_A 4762+1193.469699171217j;
+	constant_power_B 4762+1193.469699171217j;
+	constant_power_C 4762+1193.469699171217j;
+};
+
+object load {
+	name nload_load_2005;
+	nominal_voltage 120;
+	parent nt_bus2005_l;
+	constant_power_A 2982.333333333333+1178.6935542657989j;
+	constant_power_B 2982.333333333333+1178.6935542657989j;
+	constant_power_C 2982.333333333333+1178.6935542657989j;
+};
+
+object triplex_load {
+	name nload_load_2008;
+	nominal_voltage 120;
+	parent nt_bus2008_l;
+	phases AS;
+	constant_power_12 2067+941.7530223482378j;
+};
+
+object triplex_load {
+	name nload_load_2009;
+	nominal_voltage 120;
+	parent nt_bus2009_l;
+	phases AS;
+	constant_power_12 1246+492.45071038846055j;
+};
+
+object load {
+	name nload_load_2010;
+	nominal_voltage 120;
+	parent nt_bus2010_l;
+	constant_power_A 763.3333333333333+301.6886374503944j;
+	constant_power_B 763.3333333333333+301.6886374503944j;
+	constant_power_C 763.3333333333333+301.6886374503944j;
+};
+
+object load {
+	name nload_load_2011;
+	nominal_voltage 120;
+	parent nt_bus2011_l;
+	constant_power_A 1789.3333333333335+588.1254255333793j;
+	constant_power_B 1789.3333333333335+588.1254255333793j;
+	constant_power_C 1789.3333333333335+588.1254255333793j;
+};
+
+object triplex_load {
+	name nload_load_2014;
+	nominal_voltage 120;
+	parent nt_bus2014_l;
+	phases BS;
+	constant_power_12 2816+821.3333333333334j;
+};
+
+object triplex_load {
+	name nload_load_2015;
+	nominal_voltage 120;
+	parent nt_bus2015_l;
+	phases BS;
+	constant_power_12 1490+634.7373420429452j;
+};
+
+object triplex_load {
+	name nload_load_2016;
+	nominal_voltage 120;
+	parent nt_bus2016_l;
+	phases BS;
+	constant_power_12 1640+333.016203439767j;
+};
+
+object triplex_load {
+	name nload_load_2017;
+	nominal_voltage 120;
+	parent nt_bus2017_l;
+	phases BS;
+	constant_power_12 5125+2482.150787293994j;
+};
+
+object triplex_load {
+	name nload_load_2018;
+	nominal_voltage 120;
+	parent nt_bus2018_l;
+	phases BS;
+	constant_power_12 2809+819.2916666666667j;
+};
+
+object triplex_load {
+	name nload_load_2020;
+	nominal_voltage 120;
+	parent nt_bus2020_l;
+	phases BS;
+	constant_power_12 3086+1014.3191485819716j;
+};
+
+object triplex_load {
+	name nload_load_2022;
+	nominal_voltage 120;
+	parent nt_bus2022_l;
+	phases CS;
+	constant_power_12 2728+1242.9135195771614j;
+};
+
+object triplex_load {
+	name nload_load_2023;
+	nominal_voltage 120;
+	parent nt_bus2023_l;
+	phases CS;
+	constant_power_12 728+147.8267049415551j;
+};
+
+object triplex_load {
+	name nload_load_2024;
+	nominal_voltage 120;
+	parent nt_bus2024_l;
+	phases CS;
+	constant_power_12 2549+363.212828405741j;
+};
+
+object triplex_load {
+	name nload_load_2025;
+	nominal_voltage 120;
+	parent nt_bus2025_l;
+	phases CS;
+	constant_power_12 2701+1067.503506227313j;
+};
+
+object load {
+	name nload_load_2029;
+	nominal_voltage 120;
+	parent nt_bus2029_l;
+	constant_power_A 3142.333333333333+638.0779979322527j;
+	constant_power_B 3142.333333333333+638.0779979322527j;
+	constant_power_C 3142.333333333333+638.0779979322527j;
+};
+
+object load {
+	name nload_load_2030;
+	nominal_voltage 120;
+	parent nt_bus2030_l;
+	constant_power_A 1777.0000000000002+860.640380296864j;
+	constant_power_B 1777.0000000000002+860.640380296864j;
+	constant_power_C 1777.0000000000002+860.640380296864j;
+};
+
+object triplex_load {
+	name nload_load_2031;
+	nominal_voltage 120;
+	parent nt_bus2031_l;
+	phases AS;
+	constant_power_12 3279+1588.0921817633184j;
+};
+
+object load {
+	name nload_load_2032;
+	nominal_voltage 120;
+	parent nt_bus2032_l;
+	constant_power_A 739+336.69834712885716j;
+	constant_power_B 739+336.69834712885716j;
+	constant_power_C 739+336.69834712885716j;
+};
+
+object load {
+	name nload_load_2034;
+	nominal_voltage 120;
+	parent nt_bus2034_l;
+	constant_power_A 1207+584.576780539288j;
+	constant_power_B 1207+584.576780539288j;
+	constant_power_C 1207+584.576780539288j;
+};
+
+object load {
+	name nload_load_2035;
+	nominal_voltage 120;
+	parent nt_bus2035_l;
+	constant_power_A 1310.3333333333333+475.58749369780804j;
+	constant_power_B 1310.3333333333333+475.58749369780804j;
+	constant_power_C 1310.3333333333333+475.58749369780804j;
+};
+
+object load {
+	name nload_load_2037;
+	nominal_voltage 120;
+	parent nt_bus2037_l;
+	constant_power_A 1313.6666666666665+431.7813528366332j;
+	constant_power_B 1313.6666666666665+431.7813528366332j;
+	constant_power_C 1313.6666666666665+431.7813528366332j;
+};
+
+object load {
+	name nload_load_2040;
+	nominal_voltage 120.0;
+	parent nt_bus2040_l;
+	constant_power_A 27253.333333333332+7948.88888888889j;
+	constant_power_B 27253.333333333332+7948.88888888889j;
+	constant_power_C 27253.333333333332+7948.88888888889j;
+};
+
+object load {
+	name nload_load_2041;
+	nominal_voltage 120;
+	parent nt_bus2041_l;
+	constant_power_A 639.6666666666667+129.88985658555143j;
+	constant_power_B 639.6666666666667+129.88985658555143j;
+	constant_power_C 639.6666666666667+129.88985658555143j;
+};
+
+object load {
+	name nload_load_2042;
+	nominal_voltage 120;
+	parent nt_bus2042_l;
+	constant_power_A 1407.6666666666665+681.7640829100836j;
+	constant_power_B 1407.6666666666665+681.7640829100836j;
+	constant_power_C 1407.6666666666665+681.7640829100836j;
+};
+
+object load {
+	name nload_load_2043;
+	nominal_voltage 120;
+	parent nt_bus2043_l;
+	constant_power_A 2169.6666666666665+543.7697236389088j;
+	constant_power_B 2169.6666666666665+543.7697236389088j;
+	constant_power_C 2169.6666666666665+543.7697236389088j;
+};
+
+object triplex_load {
+	name nload_load_2045;
+	nominal_voltage 120;
+	parent nt_bus2045_l;
+	phases BS;
+	constant_power_12 2175+545.106382968794j;
+};
+
+object triplex_load {
+	name nload_load_2046;
+	nominal_voltage 120;
+	parent nt_bus2046_l;
+	phases BS;
+	constant_power_12 6621+2820.534189037812j;
+};
+
+object triplex_load {
+	name nload_load_2047;
+	nominal_voltage 120;
+	parent nt_bus2047_l;
+	phases BS;
+	constant_power_12 5512+1381.4374174363184j;
+};
+
+object triplex_load {
+	name nload_load_2048;
+	nominal_voltage 120;
+	parent nt_bus2048_l;
+	phases BS;
+	constant_power_12 3764+1714.929064401919j;
+};
+
+object triplex_load {
+	name nload_load_2049;
+	nominal_voltage 120;
+	parent nt_bus2049_l;
+	phases CS;
+	constant_power_12 3538+1284.122528137506j;
+};
+
+object triplex_load {
+	name nload_load_2050;
+	nominal_voltage 120;
+	parent nt_bus2050_l;
+	phases CS;
+	constant_power_12 3747+533.9185829879607j;
+};
+
+object triplex_load {
+	name nload_load_2051;
+	nominal_voltage 120;
+	parent nt_bus2051_l;
+	phases CS;
+	constant_power_12 5778+2461.417692834991j;
+};
+
+object load {
+	name nload_load_2052;
+	nominal_voltage 120;
+	parent nt_bus2052_l;
+	constant_power_A 13343.000000000002+5684.094197905382j;
+	constant_power_B 13343.000000000002+5684.094197905382j;
+	constant_power_C 13343.000000000002+5684.094197905382j;
+};
+
+object load {
+	name nload_load_2053;
+	nominal_voltage 120;
+	parent nt_bus2053_l;
+	constant_power_A 1426.6666666666667+650.0085366312624j;
+	constant_power_B 1426.6666666666667+650.0085366312624j;
+	constant_power_C 1426.6666666666667+650.0085366312624j;
+};
+
+object triplex_load {
+	name nload_load_2054;
+	nominal_voltage 120;
+	parent nt_bus2054_l;
+	phases AS;
+	constant_power_12 7159+3467.2619485341866j;
+};
+
+object triplex_load {
+	name nload_load_2055;
+	nominal_voltage 120;
+	parent nt_bus2055_l;
+	phases AS;
+	constant_power_12 4260+1242.5000000000002j;
+};
+
+object triplex_load {
+	name nload_load_2056;
+	nominal_voltage 120;
+	parent nt_bus2056_l;
+	phases AS;
+	constant_power_12 4723+2011.9895748112954j;
+};
+
+object load {
+	name nload_load_2058;
+	nominal_voltage 120;
+	parent nt_bus2058_l;
+	constant_power_A 10493.333333333334+3808.571432614347j;
+	constant_power_B 10493.333333333334+3808.571432614347j;
+	constant_power_C 10493.333333333334+3808.571432614347j;
+};
+
+object triplex_load {
+	name nload_load_2059;
+	nominal_voltage 120;
+	parent nt_bus2059_l;
+	phases BS;
+	constant_power_12 2635+1276.1887462477414j;
+};
+
+object triplex_load {
+	name nload_load_2060;
+	nominal_voltage 120;
+	parent nt_bus2060_l;
+	phases BS;
+	constant_power_12 1946+639.6192686780677j;
+};
+
+object load {
+	name nload_load_3002;
+	nominal_voltage 120;
+	parent nt_bus3002_l;
+	constant_power_A 6548.333333333333+2376.727630041577j;
+	constant_power_B 6548.333333333333+2376.727630041577j;
+	constant_power_C 6548.333333333333+2376.727630041577j;
+};
+
+object load {
+	name nload_load_3004;
+	nominal_voltage 120;
+	parent nt_bus3004_l;
+	constant_power_A 1039+503.2106669265288j;
+	constant_power_B 1039+503.2106669265288j;
+	constant_power_C 1039+503.2106669265288j;
+};
+
+object load {
+	name nload_load_3006;
+	nominal_voltage 120;
+	parent nt_bus3006_l;
+	constant_power_A 1344.3333333333335+612.4963617368882j;
+	constant_power_B 1344.3333333333335+612.4963617368882j;
+	constant_power_C 1344.3333333333335+612.4963617368882j;
+};
+
+object load {
+	name nload_load_3007;
+	nominal_voltage 120;
+	parent nt_bus3007_l;
+	constant_power_A 3141.666666666667+1521.57861269892j;
+	constant_power_B 3141.666666666667+1521.57861269892j;
+	constant_power_C 3141.666666666667+1521.57861269892j;
+};
+
+object triplex_load {
+	name nload_load_3009;
+	nominal_voltage 120;
+	parent nt_bus3009_l;
+	phases AS;
+	constant_power_12 4064+1606.1955754564235j;
+};
+
+object triplex_load {
+	name nload_load_3010;
+	nominal_voltage 120;
+	parent nt_bus3010_l;
+	phases AS;
+	constant_power_12 4935+1950.4368023812622j;
+};
+
+object triplex_load {
+	name nload_load_3011;
+	nominal_voltage 120;
+	parent nt_bus3011_l;
+	phases AS;
+	constant_power_12 7419+2438.5073763219857j;
+};
+
+object triplex_load {
+	name nload_load_3012;
+	nominal_voltage 120;
+	parent nt_bus3012_l;
+	phases AS;
+	constant_power_12 3763+1365.7866233412758j;
+};
+
+object triplex_load {
+	name nload_load_3013;
+	nominal_voltage 120;
+	parent nt_bus3013_l;
+	phases BS;
+	constant_power_12 2539+740.5416666666667j;
+};
+
+object triplex_load {
+	name nload_load_3014;
+	nominal_voltage 120;
+	parent nt_bus3014_l;
+	phases BS;
+	constant_power_12 3105+1322.7244611029162j;
+};
+
+object triplex_load {
+	name nload_load_3016;
+	nominal_voltage 120;
+	parent nt_bus3016_l;
+	phases BS;
+	constant_power_12 6246+3025.075866817227j;
+};
+
+object triplex_load {
+	name nload_load_3017;
+	nominal_voltage 120;
+	parent nt_bus3017_l;
+	phases BS;
+	constant_power_12 8493+2477.1250000000005j;
+};
+
+object triplex_load {
+	name nload_load_3018;
+	nominal_voltage 120;
+	parent nt_bus3018_l;
+	phases CS;
+	constant_power_12 5351+1942.1536597127736j;
+};
+
+object triplex_load {
+	name nload_load_3019;
+	nominal_voltage 120;
+	parent nt_bus3019_l;
+	phases CS;
+	constant_power_12 5403+1775.8802202813977j;
+};
+
+object triplex_load {
+	name nload_load_3020;
+	nominal_voltage 120;
+	parent nt_bus3020_l;
+	phases CS;
+	constant_power_12 5984+2726.390946169257j;
+};
+
+object triplex_load {
+	name nload_load_3021;
+	nominal_voltage 120;
+	parent nt_bus3021_l;
+	phases CS;
+	constant_power_12 7730+3521.892047775461j;
+};
+
+object triplex_load {
+	name nload_load_3023;
+	nominal_voltage 120;
+	parent nt_bus3023_l;
+	phases AS;
+	constant_power_12 4344+618.9864757138247j;
+};
+
+object triplex_load {
+	name nload_load_3024;
+	nominal_voltage 120;
+	parent nt_bus3024_l;
+	phases AS;
+	constant_power_12 5020+1984.0309519663497j;
+};
+
+object triplex_load {
+	name nload_load_3025;
+	nominal_voltage 120;
+	parent nt_bus3025_l;
+	phases AS;
+	constant_power_12 6546+1909.2500000000002j;
+};
+
+object triplex_load {
+	name nload_load_3026;
+	nominal_voltage 120;
+	parent nt_bus3026_l;
+	phases AS;
+	constant_power_12 10273+2086.021620693126j;
+};
+
+object triplex_load {
+	name nload_load_3027;
+	nominal_voltage 120;
+	parent nt_bus3027_l;
+	phases AS;
+	constant_power_12 7116+1444.9654290715746j;
+};
+
+object triplex_load {
+	name nload_load_3028;
+	nominal_voltage 120;
+	parent nt_bus3028_l;
+	phases AS;
+	constant_power_12 11008+5331.417730055081j;
+};
+
+object triplex_load {
+	name nload_load_3029;
+	nominal_voltage 120;
+	parent nt_bus3029_l;
+	phases AS;
+	constant_power_12 2494+1207.899329465604j;
+};
+
+object load {
+	name nload_load_3031;
+	nominal_voltage 120;
+	parent nt_bus3031_l;
+	constant_power_A 1423.6666666666667+289.0878465226108j;
+	constant_power_B 1423.6666666666667+289.0878465226108j;
+	constant_power_C 1423.6666666666667+289.0878465226108j;
+};
+
+object load {
+	name nload_load_3032;
+	nominal_voltage 120;
+	parent nt_bus3032_l;
+	constant_power_A 1902.9999999999998+921.6649655064332j;
+	constant_power_B 1902.9999999999998+921.6649655064332j;
+	constant_power_C 1902.9999999999998+921.6649655064332j;
+};
+
+object load {
+	name nload_load_3033;
+	nominal_voltage 120;
+	parent nt_bus3033_l;
+	constant_power_A 3259.6666666666665+1183.1010177743235j;
+	constant_power_B 3259.6666666666665+1183.1010177743235j;
+	constant_power_C 3259.6666666666665+1183.1010177743235j;
+};
+
+object load {
+	name nload_load_3034;
+	nominal_voltage 120;
+	parent nt_bus3034_l;
+	constant_power_A 1591.9999999999998+226.8477139356374j;
+	constant_power_B 1591.9999999999998+226.8477139356374j;
+	constant_power_C 1591.9999999999998+226.8477139356374j;
+};
+
+object load {
+	name nload_load_3035;
+	nominal_voltage 120;
+	parent nt_bus3035_l;
+	constant_power_A 3631+1193.4519859044522j;
+	constant_power_B 3631+1193.4519859044522j;
+	constant_power_C 3631+1193.4519859044522j;
+};
+
+object load {
+	name nload_load_3036;
+	nominal_voltage 120;
+	parent nt_bus3036_l;
+	constant_power_A 1341.9999999999998+391.4166666666667j;
+	constant_power_B 1341.9999999999998+391.4166666666667j;
+	constant_power_C 1341.9999999999998+391.4166666666667j;
+};
+
+object load {
+	name nload_load_3037;
+	nominal_voltage 120;
+	parent nt_bus3037_l;
+	constant_power_A 2434.3333333333335+962.110095764293j;
+	constant_power_B 2434.3333333333335+962.110095764293j;
+	constant_power_C 2434.3333333333335+962.110095764293j;
+};
+
+object load {
+	name nload_load_3038;
+	nominal_voltage 120;
+	parent nt_bus3038_l;
+	constant_power_A 2043.3333333333335+595.9722222222224j;
+	constant_power_B 2043.3333333333335+595.9722222222224j;
+	constant_power_C 2043.3333333333335+595.9722222222224j;
+};
+
+object load {
+	name nload_load_3039;
+	nominal_voltage 120;
+	parent nt_bus3039_l;
+	constant_power_A 1655.3333333333333+336.12976956948836j;
+	constant_power_B 1655.3333333333333+336.12976956948836j;
+	constant_power_C 1655.3333333333333+336.12976956948836j;
+};
+
+object triplex_load {
+	name nload_load_3041;
+	nominal_voltage 120;
+	parent nt_bus3041_l;
+	phases CS;
+	constant_power_12 5252+1316.2752751044166j;
+};
+
+object triplex_load {
+	name nload_load_3042;
+	nominal_voltage 120;
+	parent nt_bus3042_l;
+	phases CS;
+	constant_power_12 7719+1099.897929566071j;
+};
+
+object triplex_load {
+	name nload_load_3043;
+	nominal_voltage 120;
+	parent nt_bus3043_l;
+	phases CS;
+	constant_power_12 6856+1718.2755685673799j;
+};
+
+object triplex_load {
+	name nload_load_3044;
+	nominal_voltage 120;
+	parent nt_bus3044_l;
+	phases CS;
+	constant_power_12 4119+1754.6866522650278j;
+};
+
+object triplex_load {
+	name nload_load_3045;
+	nominal_voltage 120;
+	parent nt_bus3045_l;
+	phases CS;
+	constant_power_12 4434+1111.2651503832792j;
+};
+
+object load {
+	name nload_load_3047;
+	nominal_voltage 120;
+	parent nt_bus3047_l;
+	constant_power_A 3404.333333333333+1235.6080063942288j;
+	constant_power_B 3404.333333333333+1235.6080063942288j;
+	constant_power_C 3404.333333333333+1235.6080063942288j;
+};
+
+object load {
+	name nload_load_3048;
+	nominal_voltage 120;
+	parent nt_bus3048_l;
+	constant_power_A 956+136.22262218748074j;
+	constant_power_B 956+136.22262218748074j;
+	constant_power_C 956+136.22262218748074j;
+};
+
+object load {
+	name nload_load_3049;
+	nominal_voltage 120;
+	parent nt_bus3049_l;
+	constant_power_A 557+237.28100638786609j;
+	constant_power_B 557+237.28100638786609j;
+	constant_power_C 557+237.28100638786609j;
+};
+
+object load {
+	name nload_load_3050;
+	nominal_voltage 120;
+	parent nt_bus3050_l;
+	constant_power_A 882+375.73042663213266j;
+	constant_power_B 882+375.73042663213266j;
+	constant_power_C 882+375.73042663213266j;
+};
+
+object load {
+	name nload_load_3051;
+	nominal_voltage 120;
+	parent nt_bus3051_l;
+	constant_power_A 803.9999999999999+366.31322204546836j;
+	constant_power_B 803.9999999999999+366.31322204546836j;
+	constant_power_C 803.9999999999999+366.31322204546836j;
+};
+
+object load {
+	name nload_load_3052;
+	nominal_voltage 120;
+	parent nt_bus3052_l;
+	constant_power_A 2033.6666666666665+984.9497205385794j;
+	constant_power_B 2033.6666666666665+984.9497205385794j;
+	constant_power_C 2033.6666666666665+984.9497205385794j;
+};
+
+object load {
+	name nload_load_3054;
+	nominal_voltage 120;
+	parent nt_bus3054_l;
+	constant_power_A 823.6666666666666+350.8805306908541j;
+	constant_power_B 823.6666666666666+350.8805306908541j;
+	constant_power_C 823.6666666666666+350.8805306908541j;
+};
+
+object triplex_load {
+	name nload_load_3056;
+	nominal_voltage 120;
+	parent nt_bus3056_l;
+	phases BS;
+	constant_power_12 3796+1377.7640239711623j;
+};
+
+object triplex_load {
+	name nload_load_3057;
+	nominal_voltage 120;
+	parent nt_bus3057_l;
+	phases BS;
+	constant_power_12 3679+1781.8210236984596j;
+};
+
+object triplex_load {
+	name nload_load_3058;
+	nominal_voltage 120;
+	parent nt_bus3058_l;
+	phases BS;
+	constant_power_12 3475+1142.1772654965496j;
+};
+
+object triplex_load {
+	name nload_load_3059;
+	nominal_voltage 120;
+	parent nt_bus3059_l;
+	phases BS;
+	constant_power_12 4366+1989.208367475765j;
+};
+
+object triplex_load {
+	name nload_load_3060;
+	nominal_voltage 120;
+	parent nt_bus3060_l;
+	phases BS;
+	constant_power_12 3630+1193.1233017992731j;
+};
+
+object triplex_load {
+	name nload_load_3061;
+	nominal_voltage 120;
+	parent nt_bus3061_l;
+	phases BS;
+	constant_power_12 1283+374.20833333333337j;
+};
+
+object triplex_load {
+	name nload_load_3062;
+	nominal_voltage 120;
+	parent nt_bus3062_l;
+	phases BS;
+	constant_power_12 929+423.2649045774131j;
+};
+
+object triplex_load {
+	name nload_load_3063;
+	nominal_voltage 120;
+	parent nt_bus3063_l;
+	phases BS;
+	constant_power_12 6523+2367.532857840856j;
+};
+
+object triplex_load {
+	name nload_load_3064;
+	nominal_voltage 120;
+	parent nt_bus3064_l;
+	phases BS;
+	constant_power_12 7792+2272.666666666667j;
+};
+
+object triplex_load {
+	name nload_load_3065;
+	nominal_voltage 120;
+	parent nt_bus3065_l;
+	phases BS;
+	constant_power_12 2813+1020.9826658142463j;
+};
+
+object triplex_load {
+	name nload_load_3066;
+	nominal_voltage 120;
+	parent nt_bus3066_l;
+	phases BS;
+	constant_power_12 3257+1577.4370954568856j;
+};
+
+object triplex_load {
+	name nload_load_3067;
+	nominal_voltage 120;
+	parent nt_bus3067_l;
+	phases BS;
+	constant_power_12 6204+2039.1561885296667j;
+};
+
+object load {
+	name nload_load_3070;
+	nominal_voltage 120;
+	parent nt_bus3070_l;
+	constant_power_A 281.6666666666667+40.13532627211341j;
+	constant_power_B 281.6666666666667+40.13532627211341j;
+	constant_power_C 281.6666666666667+40.13532627211341j;
+};
+
+object load {
+	name nload_load_3071;
+	nominal_voltage 120;
+	parent nt_bus3071_l;
+	constant_power_A 721+236.98123983396033j;
+	constant_power_B 721+236.98123983396033j;
+	constant_power_C 721+236.98123983396033j;
+};
+
+object load {
+	name nload_load_3072;
+	nominal_voltage 120;
+	parent nt_bus3072_l;
+	constant_power_A 654.6666666666666+93.28494769045055j;
+	constant_power_B 654.6666666666666+93.28494769045055j;
+	constant_power_C 654.6666666666666+93.28494769045055j;
+};
+
+object load {
+	name nload_load_3073;
+	nominal_voltage 120;
+	parent nt_bus3073_l;
+	constant_power_A 765.6666666666667+348.8480394023387j;
+	constant_power_B 765.6666666666667+348.8480394023387j;
+	constant_power_C 765.6666666666667+348.8480394023387j;
+};
+
+object load {
+	name nload_load_3074;
+	nominal_voltage 120;
+	parent nt_bus3074_l;
+	constant_power_A 1597.0000000000002+727.6146960281258j;
+	constant_power_B 1597.0000000000002+727.6146960281258j;
+	constant_power_C 1597.0000000000002+727.6146960281258j;
+};
+
+object load {
+	name nload_load_3077;
+	nominal_voltage 120;
+	parent nt_bus3077_l;
+	constant_power_A 13679+5406.286731463685j;
+	constant_power_B 13679+5406.286731463685j;
+	constant_power_C 13679+5406.286731463685j;
+};
+
+object load {
+	name nload_load_3078;
+	nominal_voltage 120;
+	parent nt_bus3078_l;
+	constant_power_A 1337.3333333333333+609.3070675150991j;
+	constant_power_B 1337.3333333333333+609.3070675150991j;
+	constant_power_C 1337.3333333333333+609.3070675150991j;
+};
+
+object load {
+	name nload_load_3081;
+	nominal_voltage 120;
+	parent nt_bus3081_l;
+	constant_power_A 527+132.0786500342779j;
+	constant_power_B 527+132.0786500342779j;
+	constant_power_C 527+132.0786500342779j;
+};
+
+object triplex_load {
+	name nload_load_3083;
+	nominal_voltage 120;
+	parent nt_bus3083_l;
+	phases AS;
+	constant_power_12 3831+777.9177288888704j;
+};
+
+object triplex_load {
+	name nload_load_3084;
+	nominal_voltage 120;
+	parent nt_bus3084_l;
+	phases AS;
+	constant_power_12 2250+656.2500000000001j;
+};
+
+object triplex_load {
+	name nload_load_3085;
+	nominal_voltage 120;
+	parent nt_bus3085_l;
+	phases AS;
+	constant_power_12 6765+1695.4688187512143j;
+};
+
+object triplex_load {
+	name nload_load_3086;
+	nominal_voltage 120;
+	parent nt_bus3086_l;
+	phases AS;
+	constant_power_12 2350+928.7794297053629j;
+};
+
+object triplex_load {
+	name nload_load_3087;
+	nominal_voltage 120;
+	parent nt_bus3087_l;
+	phases AS;
+	constant_power_12 4101+1747.018684374576j;
+};
+
+object triplex_load {
+	name nload_load_3088;
+	nominal_voltage 120;
+	parent nt_bus3088_l;
+	phases AS;
+	constant_power_12 8410+1707.723335931976j;
+};
+
+object triplex_load {
+	name nload_load_3089;
+	nominal_voltage 120;
+	parent nt_bus3089_l;
+	phases AS;
+	constant_power_12 836+303.427482623786j;
+};
+
+object triplex_load {
+	name nload_load_3090;
+	nominal_voltage 120;
+	parent nt_bus3090_l;
+	phases AS;
+	constant_power_12 3236+461.105026567665j;
+};
+
+object triplex_load {
+	name nload_load_3091;
+	nominal_voltage 120;
+	parent nt_bus3091_l;
+	phases AS;
+	constant_power_12 2536+739.6666666666667j;
+};
+
+object triplex_load {
+	name nload_load_3093;
+	nominal_voltage 120;
+	parent nt_bus3093_l;
+	phases AS;
+	constant_power_12 4264+1942.735794529698j;
+};
+
+object triplex_load {
+	name nload_load_3094;
+	nominal_voltage 120;
+	parent nt_bus3094_l;
+	phases AS;
+	constant_power_12 3120+444.57592178340997j;
+};
+
+object triplex_load {
+	name nload_load_3095;
+	nominal_voltage 120;
+	parent nt_bus3095_l;
+	phases AS;
+	constant_power_12 5901+2141.7770035442118j;
+};
+
+object triplex_load {
+	name nload_load_3096;
+	nominal_voltage 120;
+	parent nt_bus3096_l;
+	phases AS;
+	constant_power_12 2842+934.1202269183291j;
+};
+
+object triplex_load {
+	name nload_load_3097;
+	nominal_voltage 120;
+	parent nt_bus3097_l;
+	phases AS;
+	constant_power_12 11100+4028.7620300526614j;
+};
+
+object triplex_load {
+	name nload_load_3098;
+	nominal_voltage 120;
+	parent nt_bus3098_l;
+	phases BS;
+	constant_power_12 6461+2752.3744744560195j;
+};
+
+object triplex_load {
+	name nload_load_3099;
+	nominal_voltage 120;
+	parent nt_bus3099_l;
+	phases BS;
+	constant_power_12 4424+630.3858583236557j;
+};
+
+object triplex_load {
+	name nload_load_3101;
+	nominal_voltage 120;
+	parent nt_bus3101_l;
+	phases CS;
+	constant_power_12 2387+1156.076864247954j;
+};
+
+object triplex_load {
+	name nload_load_3102;
+	nominal_voltage 120;
+	parent nt_bus3102_l;
+	phases CS;
+	constant_power_12 8200+2391.666666666667j;
+};
+
+object triplex_load {
+	name nload_load_3103;
+	nominal_voltage 120;
+	parent nt_bus3103_l;
+	phases CS;
+	constant_power_12 6718+2655.1234930896294j;
+};
+
+object triplex_load {
+	name nload_load_3104;
+	nominal_voltage 120;
+	parent nt_bus3104_l;
+	phases CS;
+	constant_power_12 8730+2869.412238211475j;
+};
+
+object triplex_load {
+	name nload_load_3105;
+	nominal_voltage 120;
+	parent nt_bus3105_l;
+	phases CS;
+	constant_power_12 3052+619.7350322549811j;
+};
+
+object triplex_load {
+	name nload_load_3106;
+	nominal_voltage 120;
+	parent nt_bus3106_l;
+	phases CS;
+	constant_power_12 9815+3879.1362138545264j;
+};
+
+object triplex_load {
+	name nload_load_3108;
+	nominal_voltage 120;
+	parent nt_bus3108_l;
+	phases AS;
+	constant_power_12 2175+634.3750000000001j;
+};
+
+object triplex_load {
+	name nload_load_3109;
+	nominal_voltage 120;
+	parent nt_bus3109_l;
+	phases AS;
+	constant_power_12 13807+6687.035301496229j;
+};
+
+object triplex_load {
+	name nload_load_3110;
+	nominal_voltage 120;
+	parent nt_bus3110_l;
+	phases AS;
+	constant_power_12 9577+1364.6485906793966j;
+};
+
+object triplex_load {
+	name nload_load_3111;
+	nominal_voltage 120;
+	parent nt_bus3111_l;
+	phases AS;
+	constant_power_12 9729+2837.6250000000005j;
+};
+
+object triplex_load {
+	name nload_load_3112;
+	nominal_voltage 120;
+	parent nt_bus3112_l;
+	phases AS;
+	constant_power_12 9339+1330.7354274151494j;
+};
+
+object triplex_load {
+	name nload_load_3114;
+	nominal_voltage 120;
+	parent nt_bus3114_l;
+	phases BS;
+	constant_power_12 5162+2351.8766818391887j;
+};
+
+object triplex_load {
+	name nload_load_3115;
+	nominal_voltage 120;
+	parent nt_bus3115_l;
+	phases BS;
+	constant_power_12 7794+1110.5848507627875j;
+};
+
+object triplex_load {
+	name nload_load_3116;
+	nominal_voltage 120;
+	parent nt_bus3116_l;
+	phases BS;
+	constant_power_12 7337+2139.9583333333335j;
+};
+
+object triplex_load {
+	name nload_load_3117;
+	nominal_voltage 120;
+	parent nt_bus3117_l;
+	phases BS;
+	constant_power_12 3688+1786.179922642j;
+};
+
+object triplex_load {
+	name nload_load_3120;
+	nominal_voltage 120;
+	parent nt_bus3120_l;
+	phases BS;
+	constant_power_12 3209+457.257734936847j;
+};
+
+object triplex_load {
+	name nload_load_3121;
+	nominal_voltage 120;
+	parent nt_bus3121_l;
+	phases BS;
+	constant_power_12 2845+713.0242112856179j;
+};
+
+object triplex_load {
+	name nload_load_3122;
+	nominal_voltage 120;
+	parent nt_bus3122_l;
+	phases BS;
+	constant_power_12 4209+1917.6770542156423j;
+};
+
+object triplex_load {
+	name nload_load_3123;
+	nominal_voltage 120;
+	parent nt_bus3123_l;
+	phases BS;
+	constant_power_12 5077+2458.9033262617772j;
+};
+
+object triplex_load {
+	name nload_load_3124;
+	nominal_voltage 120;
+	parent nt_bus3124_l;
+	phases BS;
+	constant_power_12 3261+1579.374383876237j;
+};
+
+object triplex_load {
+	name nload_load_3125;
+	nominal_voltage 120;
+	parent nt_bus3125_l;
+	phases BS;
+	constant_power_12 760+368.0847996767679j;
+};
+
+object triplex_load {
+	name nload_load_3126;
+	nominal_voltage 120;
+	parent nt_bus3126_l;
+	phases BS;
+	constant_power_12 6249+2662.062852635144j;
+};
+
+object triplex_load {
+	name nload_load_3127;
+	nominal_voltage 120;
+	parent nt_bus3127_l;
+	phases BS;
+	constant_power_12 6152+1249.2168802203944j;
+};
+
+object triplex_load {
+	name nload_load_3128;
+	nominal_voltage 120;
+	parent nt_bus3128_l;
+	phases BS;
+	constant_power_12 3688+1212.1869798996472j;
+};
+
+object triplex_load {
+	name nload_load_3129;
+	nominal_voltage 120;
+	parent nt_bus3129_l;
+	phases BS;
+	constant_power_12 1967+646.5216348868238j;
+};
+
+object triplex_load {
+	name nload_load_3130;
+	nominal_voltage 120;
+	parent nt_bus3130_l;
+	phases BS;
+	constant_power_12 3657+742.5855219385537j;
+};
+
+object triplex_load {
+	name nload_load_3131;
+	nominal_voltage 120;
+	parent nt_bus3131_l;
+	phases BS;
+	constant_power_12 3556+1620.1614646687633j;
+};
+
+object triplex_load {
+	name nload_load_3132;
+	nominal_voltage 120;
+	parent nt_bus3132_l;
+	phases AS;
+	constant_power_12 11560+4924.539378534528j;
+};
+
+object triplex_load {
+	name nload_load_3134;
+	nominal_voltage 120;
+	parent nt_bus3134_l;
+	phases AS;
+	constant_power_12 5953+848.2565584540512j;
+};
+
+object triplex_load {
+	name nload_load_3135;
+	nominal_voltage 120;
+	parent nt_bus3135_l;
+	phases AS;
+	constant_power_12 7005+2302.4321567779366j;
+};
+
+object triplex_load {
+	name nload_load_3136;
+	nominal_voltage 120;
+	parent nt_bus3136_l;
+	phases AS;
+	constant_power_12 9443+4573.453635983841j;
+};
+
+object triplex_load {
+	name nload_load_3137;
+	nominal_voltage 120;
+	parent nt_bus3137_l;
+	phases AS;
+	constant_power_12 13759+2793.884111663265j;
+};
+
+object triplex_load {
+	name nload_load_3138;
+	nominal_voltage 120;
+	parent nt_bus3138_l;
+	phases AS;
+	constant_power_12 8522+3630.3567979127374j;
+};
+
+object triplex_load {
+	name nload_load_3141;
+	nominal_voltage 120;
+	parent nt_bus3141_l;
+	phases CS;
+	constant_power_12 4915+998.033317016131j;
+};
+
+object triplex_load {
+	name nload_load_3142;
+	nominal_voltage 120;
+	parent nt_bus3142_l;
+	phases CS;
+	constant_power_12 4017.0000000000005+1006.755099027883j;
+};
+
+object triplex_load {
+	name nload_load_3143;
+	nominal_voltage 120;
+	parent nt_bus3143_l;
+	phases CS;
+	constant_power_12 7716+2536.126555560108j;
+};
+
+object triplex_load {
+	name nload_load_3144;
+	nominal_voltage 120;
+	parent nt_bus3144_l;
+	phases CS;
+	constant_power_12 482+219.60568784317883j;
+};
+
+object triplex_load {
+	name nload_load_3145;
+	nominal_voltage 120;
+	parent nt_bus3145_l;
+	phases CS;
+	constant_power_12 1782+863.0619908210532j;
+};
+
+object triplex_load {
+	name nload_load_3146;
+	nominal_voltage 120;
+	parent nt_bus3146_l;
+	phases CS;
+	constant_power_12 1616+736.2713517729812j;
+};
+
+object triplex_load {
+	name nload_load_3147;
+	nominal_voltage 120;
+	parent nt_bus3147_l;
+	phases CS;
+	constant_power_12 8324+4031.4972006702837j;
+};
+
+object triplex_load {
+	name nload_load_3148;
+	nominal_voltage 120;
+	parent nt_bus3148_l;
+	phases CS;
+	constant_power_12 9987+4550.211627572256j;
+};
+
+object triplex_load {
+	name nload_load_3149;
+	nominal_voltage 120;
+	parent nt_bus3149_l;
+	phases CS;
+	constant_power_12 2029+864.3503805403597j;
+};
+
+object triplex_load {
+	name nload_load_3150;
+	nominal_voltage 120;
+	parent nt_bus3150_l;
+	phases CS;
+	constant_power_12 2602+652.1226705677251j;
+};
+
+object triplex_load {
+	name nload_load_3151;
+	nominal_voltage 120;
+	parent nt_bus3151_l;
+	phases CS;
+	constant_power_12 1686+554.1614013315633j;
+};
+
+object triplex_load {
+	name nload_load_3152;
+	nominal_voltage 120;
+	parent nt_bus3152_l;
+	phases CS;
+	constant_power_12 1934+936.6789507564068j;
+};
+
+object triplex_load {
+	name nload_load_3153;
+	nominal_voltage 120;
+	parent nt_bus3153_l;
+	phases CS;
+	constant_power_12 5976+2894.3088985110066j;
+};
+
+object triplex_load {
+	name nload_load_3154;
+	nominal_voltage 120;
+	parent nt_bus3154_l;
+	phases CS;
+	constant_power_12 4836+689.0926787642856j;
+};
+
+object triplex_load {
+	name nload_load_3155;
+	nominal_voltage 120;
+	parent nt_bus3155_l;
+	phases CS;
+	constant_power_12 1477+485.46642334918084j;
+};
+
+object triplex_load {
+	name nload_load_3157;
+	nominal_voltage 120;
+	parent nt_bus3157_l;
+	phases CS;
+	constant_power_12 9740+4149.222625166635j;
+};
+
+object triplex_load {
+	name nload_load_3158;
+	nominal_voltage 120;
+	parent nt_bus3158_l;
+	phases CS;
+	constant_power_12 6517+1633.314159911554j;
+};
+
+object triplex_load {
+	name nload_load_3159;
+	nominal_voltage 120;
+	parent nt_bus3159_l;
+	phases CS;
+	constant_power_12 9776+4454.077187458332j;
+};
+
+object triplex_load {
+	name nload_load_3160;
+	nominal_voltage 120;
+	parent nt_bus3160_l;
+	phases CS;
+	constant_power_12 4252+1397.564815220526j;
+};
+
+object triplex_load {
+	name nload_load_3161;
+	nominal_voltage 120;
+	parent nt_bus3161_l;
+	phases CS;
+	constant_power_12 2744+390.99882351720413j;
+};
+
+object triplex_load {
+	name nload_load_3162;
+	nominal_voltage 120;
+	parent nt_bus3162_l;
+	phases CS;
+	constant_power_12 3750+761.4699773775161j;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type DELTA_GWYE;
+	primary_voltage 69000.0;
+	secondary_voltage 13800.0;
+	power_rating 10000.0;
+	reactance 0.0627591063;
+	resistance 0.012541818;
+	name transformer_config_1;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type WYE_WYE;
+	primary_voltage 13800.0;
+	secondary_voltage 208.0;
+	power_rating 112.5;
+	reactance 0.0387;
+	resistance 0.0243;
+	name transformer_config_3;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type WYE_WYE;
+	primary_voltage 13800.0;
+	secondary_voltage 208.0;
+	power_rating 75.0;
+	reactance 0.0191;
+	resistance 0.0227;
+	name transformer_config_4;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type DELTA_DELTA;
+	primary_voltage 13800.0;
+	secondary_voltage 208.0;
+	power_rating 75.0;
+	reactance 0.037;
+	resistance 0.0248;
+	name transformer_config_5;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type DELTA_DELTA;
+	primary_voltage 13800.0;
+	secondary_voltage 208.0;
+	power_rating 25.0;
+	reactance 0.023;
+	resistance 0.014;
+	name transformer_config_6;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type WYE_WYE;
+	primary_voltage 13800.0;
+	secondary_voltage 208.0;
+	power_rating 45.0;
+	reactance 0.0173;
+	resistance 0.0252;
+	name transformer_config_7;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerA_rating 25.0;
+	reactance 0.0207;
+	resistance 0.014;
+	name transformer_config_8A;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerB_rating 25.0;
+	reactance 0.0207;
+	resistance 0.014;
+	name transformer_config_8B;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerC_rating 25.0;
+	reactance 0.0207;
+	resistance 0.014;
+	name transformer_config_8C;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerA_rating 37.5;
+	reactance 0.0243;
+	resistance 0.036;
+	name transformer_config_9A;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerB_rating 37.5;
+	reactance 0.0243;
+	resistance 0.036;
+	name transformer_config_9B;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerC_rating 37.5;
+	reactance 0.0243;
+	resistance 0.036;
+	name transformer_config_9C;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerA_rating 50.0;
+	reactance 0.0252;
+	resistance 0.031;
+	name transformer_config_10A;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerB_rating 50.0;
+	reactance 0.0252;
+	resistance 0.031;
+	name transformer_config_10B;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerC_rating 50.0;
+	reactance 0.0252;
+	resistance 0.031;
+	name transformer_config_10C;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type WYE_WYE;
+	primary_voltage 13800.0;
+	secondary_voltage 208.0;
+	power_rating 300.0;
+	reactance 0.045;
+	resistance 0.018;
+	name transformer_config_11;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerA_rating 15.0;
+	reactance 0.01815;
+	resistance 0.016;
+	name transformer_config_12A;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerB_rating 15.0;
+	reactance 0.01815;
+	resistance 0.016;
+	name transformer_config_12B;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerC_rating 15.0;
+	reactance 0.01815;
+	resistance 0.016;
+	name transformer_config_12C;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type WYE_WYE;
+	primary_voltage 13800.0;
+	secondary_voltage 208.0;
+	power_rating 225.0;
+	reactance 0.055;
+	resistance 0.0115;
+	name transformer_config_13;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerA_rating 100.0;
+	reactance 0.03195;
+	resistance 0.0212;
+	name transformer_config_14A;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerB_rating 100.0;
+	reactance 0.03195;
+	resistance 0.0212;
+	name transformer_config_14B;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type SINGLE_PHASE_CENTER_TAPPED;
+	primary_voltage 7967.7;
+	secondary_voltage 120.0;
+	powerC_rating 100.0;
+	reactance 0.03195;
+	resistance 0.0212;
+	name transformer_config_14C;
+};
+
+object transformer_configuration {
+	no_load_loss 0.0;
+	connect_type WYE_WYE;
+	primary_voltage 13800.0;
+	secondary_voltage 208.0;
+	power_rating 500.0;
+	reactance 0.059;
+	resistance 0.016;
+	name transformer_config_15;
+};
+
+object transformer {
+	name nsub_xfmr;
+	from neq_source_bus;
+	to nbus_xfmr;
+	phases ABC;
+	configuration transformer_config_1;
+};
+
+object regulator {
+	name nregulator_reg_contr_a;
+	from nbus_xfmr;
+	to nbus1;
+	phases ABC;
+	configuration regulator_config_1;
+};
+
+object regulator_configuration {
+	name regulator_config_1;
+	connect_type 1;
+	CT_phase ABC;
+	PT_phase ABC;
+	band_width 2.0;
+	raise_taps 16;
+	power_transducer_ratio 66.395279;
+	lower_taps 16;
+	band_center 123.0;
+	time_delay 15.0;
+	tap_pos_A 0;
+	tap_pos_B 0;
+	tap_pos_C 0;
+	compensator_r_setting_A 0.0;
+	control_level INDIVIDUAL;
+	Control MANUAL;
+};
+
+object transformer {
+	name nt_1003;
+	from nbus1003;
+	to nt_bus1003_l;
+	phases ABC;
+	configuration transformer_config_3;
+};
+
+object transformer {
+	name nt_1004;
+	from nbus1004;
+	to nt_bus1004_l;
+	phases ABC;
+	configuration transformer_config_4;
+};
+
+object transformer {
+	name nt_1005;
+	from nbus1005;
+	to nt_bus1005_l;
+	phases ABC;
+	configuration transformer_config_4;
+};
+
+object transformer {
+	name nt_1006;
+	from nbus1006;
+	to nt_bus1006_l;
+	phases ABD;
+	configuration transformer_config_5;
+};
+
+object transformer {
+	name nt_1007;
+	from nbus1007;
+	to nt_bus1007_l;
+	phases ABD;
+	configuration transformer_config_6;
+};
+
+object transformer {
+	name nt_1008;
+	from nbus1008;
+	to nt_bus1008_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_1009;
+	from nbus1009;
+	to nt_bus1009_l;
+	phases ABC;
+	configuration transformer_config_4;
+};
+
+object transformer {
+	name nt_1010;
+	from nbus1010;
+	to nt_bus1010_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_1011;
+	from nbus1011;
+	to nt_bus1011_l;
+	phases AS;
+	configuration transformer_config_8A;
+};
+
+object transformer {
+	name nt_1012;
+	from nbus1012;
+	to nt_bus1012_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_1013;
+	from nbus1013;
+	to nt_bus1013_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_1014;
+	from nbus1014;
+	to nt_bus1014_l;
+	phases BS;
+	configuration transformer_config_8B;
+};
+
+object transformer {
+	name nt_1015;
+	from nbus1015;
+	to nt_bus1015_l;
+	phases BS;
+	configuration transformer_config_8B;
+};
+
+object transformer {
+	name nt_1016;
+	from nbus1016;
+	to nt_bus1016_l;
+	phases CS;
+	configuration transformer_config_10C;
+};
+
+object transformer {
+	name nt_1017;
+	from nbus1017;
+	to nt_bus1017_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_2002;
+	from nbus2002;
+	to nt_bus2002_l;
+	phases ABC;
+	configuration transformer_config_11;
+};
+
+object transformer {
+	name nt_2003;
+	from nbus2003;
+	to nt_bus2003_l;
+	phases ABC;
+	configuration transformer_config_4;
+};
+
+object transformer {
+	name nt_2005;
+	from nbus2005;
+	to nt_bus2005_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_2008;
+	from nbus2008;
+	to nt_bus2008_l;
+	phases AS;
+	configuration transformer_config_8A;
+};
+
+object transformer {
+	name nt_2009;
+	from nbus2009;
+	to nt_bus2009_l;
+	phases AS;
+	configuration transformer_config_8A;
+};
+
+object transformer {
+	name nt_2010;
+	from nbus2010;
+	to nt_bus2010_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_2011;
+	from nbus2011;
+	to nt_bus2011_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_2014;
+	from nbus2014;
+	to nt_bus2014_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_2015;
+	from nbus2015;
+	to nt_bus2015_l;
+	phases BS;
+	configuration transformer_config_8B;
+};
+
+object transformer {
+	name nt_2016;
+	from nbus2016;
+	to nt_bus2016_l;
+	phases BS;
+	configuration transformer_config_8B;
+};
+
+object transformer {
+	name nt_2017;
+	from nbus2017;
+	to nt_bus2017_l;
+	phases BS;
+	configuration transformer_config_8B;
+};
+
+object transformer {
+	name nt_2018;
+	from nbus2018;
+	to nt_bus2018_l;
+	phases BS;
+	configuration transformer_config_8B;
+};
+
+object transformer {
+	name nt_2020;
+	from nbus2020;
+	to nt_bus2020_l;
+	phases BS;
+	configuration transformer_config_8B;
+};
+
+object transformer {
+	name nt_2022;
+	from nbus2022;
+	to nt_bus2022_l;
+	phases CS;
+	configuration transformer_config_8C;
+};
+
+object transformer {
+	name nt_2023;
+	from nbus2023;
+	to nt_bus2023_l;
+	phases CS;
+	configuration transformer_config_12C;
+};
+
+object transformer {
+	name nt_2024;
+	from nbus2024;
+	to nt_bus2024_l;
+	phases CS;
+	configuration transformer_config_8C;
+};
+
+object transformer {
+	name nt_2025;
+	from nbus2025;
+	to nt_bus2025_l;
+	phases CS;
+	configuration transformer_config_8C;
+};
+
+object transformer {
+	name nt_2028;
+	from nbus2028;
+	to nt_bus2028_l;
+	phases AS;
+	configuration transformer_config_8A;
+};
+
+object transformer {
+	name nt_2029;
+	from nbus2029;
+	to nt_bus2029_l;
+	phases ABC;
+	configuration transformer_config_4;
+};
+
+object transformer {
+	name nt_2030;
+	from nbus2030;
+	to nt_bus2030_l;
+	phases ABC;
+	configuration transformer_config_4;
+};
+
+object transformer {
+	name nt_2031;
+	from nbus2031;
+	to nt_bus2031_l;
+	phases AS;
+	configuration transformer_config_8A;
+};
+
+object transformer {
+	name nt_2032;
+	from nbus2032;
+	to nt_bus2032_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_2034;
+	from nbus2034;
+	to nt_bus2034_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_2035;
+	from nbus2035;
+	to nt_bus2035_l;
+	phases ABC;
+	configuration transformer_config_4;
+};
+
+object transformer {
+	name nt_2037;
+	from nbus2037;
+	to nt_bus2037_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_2040;
+	from nbus2040;
+	to nt_bus2040_l;
+	phases ABC;
+	configuration transformer_config_11;
+};
+
+object transformer {
+	name nt_2041;
+	from nbus2041;
+	to nt_bus2041_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_2042;
+	from nbus2042;
+	to nt_bus2042_l;
+	phases ABC;
+	configuration transformer_config_4;
+};
+
+object transformer {
+	name nt_2043;
+	from nbus2043;
+	to nt_bus2043_l;
+	phases ABC;
+	configuration transformer_config_4;
+};
+
+object transformer {
+	name nt_2045;
+	from nbus2045;
+	to nt_bus2045_l;
+	phases BS;
+	configuration transformer_config_12B;
+};
+
+object transformer {
+	name nt_2046;
+	from nbus2046;
+	to nt_bus2046_l;
+	phases BS;
+	configuration transformer_config_10B;
+};
+
+object transformer {
+	name nt_2047;
+	from nbus2047;
+	to nt_bus2047_l;
+	phases BS;
+	configuration transformer_config_10B;
+};
+
+object transformer {
+	name nt_2048;
+	from nbus2048;
+	to nt_bus2048_l;
+	phases BS;
+	configuration transformer_config_10B;
+};
+
+object transformer {
+	name nt_2049;
+	from nbus2049;
+	to nt_bus2049_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_2050;
+	from nbus2050;
+	to nt_bus2050_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_2051;
+	from nbus2051;
+	to nt_bus2051_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_2052;
+	from nbus2052;
+	to nt_bus2052_l;
+	phases ABC;
+	configuration transformer_config_13;
+};
+
+object transformer {
+	name nt_2053;
+	from nbus2053;
+	to nt_bus2053_l;
+	phases ABC;
+	configuration transformer_config_13;
+};
+
+object transformer {
+	name nt_2054;
+	from nbus2054;
+	to nt_bus2054_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_2055;
+	from nbus2055;
+	to nt_bus2055_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_2056;
+	from nbus2056;
+	to nt_bus2056_l;
+	phases AS;
+	configuration transformer_config_8A;
+};
+
+object transformer {
+	name nt_2058;
+	from nbus2058;
+	to nt_bus2058_l;
+	phases ABC;
+	configuration transformer_config_11;
+};
+
+object transformer {
+	name nt_2059;
+	from nbus2059;
+	to nt_bus2059_l;
+	phases BS;
+	configuration transformer_config_8B;
+};
+
+object transformer {
+	name nt_2060;
+	from nbus2060;
+	to nt_bus2060_l;
+	phases BS;
+	configuration transformer_config_8B;
+};
+
+object transformer {
+	name nt_3002;
+	from nbus3002;
+	to nt_bus3002_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3004;
+	from nbus3004;
+	to nt_bus3004_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3006;
+	from nbus3006;
+	to nt_bus3006_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3007;
+	from nbus3007;
+	to nt_bus3007_l;
+	phases ABC;
+	configuration transformer_config_4;
+};
+
+object transformer {
+	name nt_3009;
+	from nbus3009;
+	to nt_bus3009_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3010;
+	from nbus3010;
+	to nt_bus3010_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3011;
+	from nbus3011;
+	to nt_bus3011_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3012;
+	from nbus3012;
+	to nt_bus3012_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_3013;
+	from nbus3013;
+	to nt_bus3013_l;
+	phases BS;
+	configuration transformer_config_8B;
+};
+
+object transformer {
+	name nt_3014;
+	from nbus3014;
+	to nt_bus3014_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3016;
+	from nbus3016;
+	to nt_bus3016_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3017;
+	from nbus3017;
+	to nt_bus3017_l;
+	phases BS;
+	configuration transformer_config_14B;
+};
+
+object transformer {
+	name nt_3018;
+	from nbus3018;
+	to nt_bus3018_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3019;
+	from nbus3019;
+	to nt_bus3019_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3020;
+	from nbus3020;
+	to nt_bus3020_l;
+	phases CS;
+	configuration transformer_config_14C;
+};
+
+object transformer {
+	name nt_3021;
+	from nbus3021;
+	to nt_bus3021_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3023;
+	from nbus3023;
+	to nt_bus3023_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_3024;
+	from nbus3024;
+	to nt_bus3024_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3025;
+	from nbus3025;
+	to nt_bus3025_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_3026;
+	from nbus3026;
+	to nt_bus3026_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3027;
+	from nbus3027;
+	to nt_bus3027_l;
+	phases AS;
+	configuration transformer_config_14A;
+};
+
+object transformer {
+	name nt_3028;
+	from nbus3028;
+	to nt_bus3028_l;
+	phases AS;
+	configuration transformer_config_14A;
+};
+
+object transformer {
+	name nt_3029;
+	from nbus3029;
+	to nt_bus3029_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3031;
+	from nbus3031;
+	to nt_bus3031_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3032;
+	from nbus3032;
+	to nt_bus3032_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3033;
+	from nbus3033;
+	to nt_bus3033_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3034;
+	from nbus3034;
+	to nt_bus3034_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3035;
+	from nbus3035;
+	to nt_bus3035_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3036;
+	from nbus3036;
+	to nt_bus3036_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3037;
+	from nbus3037;
+	to nt_bus3037_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3038;
+	from nbus3038;
+	to nt_bus3038_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3039;
+	from nbus3039;
+	to nt_bus3039_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3041;
+	from nbus3041;
+	to nt_bus3041_l;
+	phases CS;
+	configuration transformer_config_10C;
+};
+
+object transformer {
+	name nt_3042;
+	from nbus3042;
+	to nt_bus3042_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3043;
+	from nbus3043;
+	to nt_bus3043_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3044;
+	from nbus3044;
+	to nt_bus3044_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3045;
+	from nbus3045;
+	to nt_bus3045_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3047;
+	from nbus3047;
+	to nt_bus3047_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3048;
+	from nbus3048;
+	to nt_bus3048_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3049;
+	from nbus3049;
+	to nt_bus3049_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3050;
+	from nbus3050;
+	to nt_bus3050_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3051;
+	from nbus3051;
+	to nt_bus3051_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3052;
+	from nbus3052;
+	to nt_bus3052_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3054;
+	from nbus3054;
+	to nt_bus3054_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3056;
+	from nbus3056;
+	to nt_bus3056_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3057;
+	from nbus3057;
+	to nt_bus3057_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3058;
+	from nbus3058;
+	to nt_bus3058_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3059;
+	from nbus3059;
+	to nt_bus3059_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3060;
+	from nbus3060;
+	to nt_bus3060_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3061;
+	from nbus3061;
+	to nt_bus3061_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3062;
+	from nbus3062;
+	to nt_bus3062_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3063;
+	from nbus3063;
+	to nt_bus3063_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3064;
+	from nbus3064;
+	to nt_bus3064_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3065;
+	from nbus3065;
+	to nt_bus3065_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3066;
+	from nbus3066;
+	to nt_bus3066_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3067;
+	from nbus3067;
+	to nt_bus3067_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3070;
+	from nbus3070;
+	to nt_bus3070_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3071;
+	from nbus3071;
+	to nt_bus3071_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3072;
+	from nbus3072;
+	to nt_bus3072_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3073;
+	from nbus3073;
+	to nt_bus3073_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3074;
+	from nbus3074;
+	to nt_bus3074_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3077;
+	from nbus3077;
+	to nt_bus3077_l;
+	phases ABC;
+	configuration transformer_config_15;
+};
+
+object transformer {
+	name nt_3078;
+	from nbus3078;
+	to nt_bus3078_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3081;
+	from nbus3081;
+	to nt_bus3081_l;
+	phases ABC;
+	configuration transformer_config_7;
+};
+
+object transformer {
+	name nt_3083;
+	from nbus3083;
+	to nt_bus3083_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3084;
+	from nbus3084;
+	to nt_bus3084_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3085;
+	from nbus3085;
+	to nt_bus3085_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3086;
+	from nbus3086;
+	to nt_bus3086_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3087;
+	from nbus3087;
+	to nt_bus3087_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3088;
+	from nbus3088;
+	to nt_bus3088_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3089;
+	from nbus3089;
+	to nt_bus3089_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3090;
+	from nbus3090;
+	to nt_bus3090_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3091;
+	from nbus3091;
+	to nt_bus3091_l;
+	phases AS;
+	configuration transformer_config_8A;
+};
+
+object transformer {
+	name nt_3093;
+	from nbus3093;
+	to nt_bus3093_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3094;
+	from nbus3094;
+	to nt_bus3094_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3095;
+	from nbus3095;
+	to nt_bus3095_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3096;
+	from nbus3096;
+	to nt_bus3096_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3097;
+	from nbus3097;
+	to nt_bus3097_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3098;
+	from nbus3098;
+	to nt_bus3098_l;
+	phases BS;
+	configuration transformer_config_10B;
+};
+
+object transformer {
+	name nt_3099;
+	from nbus3099;
+	to nt_bus3099_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3101;
+	from nbus3101;
+	to nt_bus3101_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3102;
+	from nbus3102;
+	to nt_bus3102_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3103;
+	from nbus3103;
+	to nt_bus3103_l;
+	phases CS;
+	configuration transformer_config_10C;
+};
+
+object transformer {
+	name nt_3104;
+	from nbus3104;
+	to nt_bus3104_l;
+	phases CS;
+	configuration transformer_config_14C;
+};
+
+object transformer {
+	name nt_3105;
+	from nbus3105;
+	to nt_bus3105_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3106;
+	from nbus3106;
+	to nt_bus3106_l;
+	phases CS;
+	configuration transformer_config_14C;
+};
+
+object transformer {
+	name nt_3108;
+	from nbus3108;
+	to nt_bus3108_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3109;
+	from nbus3109;
+	to nt_bus3109_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3110;
+	from nbus3110;
+	to nt_bus3110_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_3111;
+	from nbus3111;
+	to nt_bus3111_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_3112;
+	from nbus3112;
+	to nt_bus3112_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_3114;
+	from nbus3114;
+	to nt_bus3114_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3115;
+	from nbus3115;
+	to nt_bus3115_l;
+	phases BS;
+	configuration transformer_config_10B;
+};
+
+object transformer {
+	name nt_3116;
+	from nbus3116;
+	to nt_bus3116_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3117;
+	from nbus3117;
+	to nt_bus3117_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3120;
+	from nbus3120;
+	to nt_bus3120_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3121;
+	from nbus3121;
+	to nt_bus3121_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3122;
+	from nbus3122;
+	to nt_bus3122_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3123;
+	from nbus3123;
+	to nt_bus3123_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3124;
+	from nbus3124;
+	to nt_bus3124_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3125;
+	from nbus3125;
+	to nt_bus3125_l;
+	phases BS;
+	configuration transformer_config_12B;
+};
+
+object transformer {
+	name nt_3126;
+	from nbus3126;
+	to nt_bus3126_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3127;
+	from nbus3127;
+	to nt_bus3127_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3128;
+	from nbus3128;
+	to nt_bus3128_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3129;
+	from nbus3129;
+	to nt_bus3129_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3130;
+	from nbus3130;
+	to nt_bus3130_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3131;
+	from nbus3131;
+	to nt_bus3131_l;
+	phases BS;
+	configuration transformer_config_9B;
+};
+
+object transformer {
+	name nt_3132;
+	from nbus3132;
+	to nt_bus3132_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_3134;
+	from nbus3134;
+	to nt_bus3134_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_3135;
+	from nbus3135;
+	to nt_bus3135_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3136;
+	from nbus3136;
+	to nt_bus3136_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_3137;
+	from nbus3137;
+	to nt_bus3137_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_3138;
+	from nbus3138;
+	to nt_bus3138_l;
+	phases AS;
+	configuration transformer_config_10A;
+};
+
+object transformer {
+	name nt_3139;
+	from nbus3139;
+	to nt_bus3139_l;
+	phases AS;
+	configuration transformer_config_9A;
+};
+
+object transformer {
+	name nt_3141;
+	from nbus3141;
+	to nt_bus3141_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3142;
+	from nbus3142;
+	to nt_bus3142_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3143;
+	from nbus3143;
+	to nt_bus3143_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3144;
+	from nbus3144;
+	to nt_bus3144_l;
+	phases CS;
+	configuration transformer_config_12C;
+};
+
+object transformer {
+	name nt_3145;
+	from nbus3145;
+	to nt_bus3145_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3146;
+	from nbus3146;
+	to nt_bus3146_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3147;
+	from nbus3147;
+	to nt_bus3147_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3148;
+	from nbus3148;
+	to nt_bus3148_l;
+	phases CS;
+	configuration transformer_config_10C;
+};
+
+object transformer {
+	name nt_3149;
+	from nbus3149;
+	to nt_bus3149_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3150;
+	from nbus3150;
+	to nt_bus3150_l;
+	phases CS;
+	configuration transformer_config_8C;
+};
+
+object transformer {
+	name nt_3151;
+	from nbus3151;
+	to nt_bus3151_l;
+	phases CS;
+	configuration transformer_config_8C;
+};
+
+object transformer {
+	name nt_3152;
+	from nbus3152;
+	to nt_bus3152_l;
+	phases CS;
+	configuration transformer_config_8C;
+};
+
+object transformer {
+	name nt_3153;
+	from nbus3153;
+	to nt_bus3153_l;
+	phases CS;
+	configuration transformer_config_9C;
+};
+
+object transformer {
+	name nt_3154;
+	from nbus3154;
+	to nt_bus3154_l;
+	phases CS;
+	configuration transformer_config_8C;
+};
+
+object transformer {
+	name nt_3155;
+	from nbus3155;
+	to nt_bus3155_l;
+	phases CS;
+	configuration transformer_config_8C;
+};
+
+object transformer {
+	name nt_3157;
+	from nbus3157;
+	to nt_bus3157_l;
+	phases CS;
+	configuration transformer_config_10C;
+};
+
+object transformer {
+	name nt_3158;
+	from nbus3158;
+	to nt_bus3158_l;
+	phases CS;
+	configuration transformer_config_10C;
+};
+
+object transformer {
+	name nt_3159;
+	from nbus3159;
+	to nt_bus3159_l;
+	phases CS;
+	configuration transformer_config_10C;
+};
+
+object transformer {
+	name nt_3160;
+	from nbus3160;
+	to nt_bus3160_l;
+	phases CS;
+	configuration transformer_config_8C;
+};
+
+object transformer {
+	name nt_3161;
+	from nbus3161;
+	to nt_bus3161_l;
+	phases CS;
+	configuration transformer_config_8C;
+};
+
+object transformer {
+	name nt_3162;
+	from nbus3162;
+	to nt_bus3162_l;
+	phases CS;
+	configuration transformer_config_8C;
+};
+
+object regulator_configuration {
+	name regulator_config_2;
+	band_width 2.0;
+	raise_taps 16;
+	connect_type WYE_WYE;
+	PT_phase B;
+	power_transducer_ratio 66.395279;
+	lower_taps 16;
+	band_center 123.0;
+	time_delay 15.0;
+	tap_pos_B 1.025;
+	compensator_r_setting_B 0.0;
+};
+
+object regulator_configuration {
+	name regulator_config_3;
+	band_width 2.0;
+	raise_taps 16;
+	connect_type WYE_WYE;
+	PT_phase C;
+	power_transducer_ratio 66.395279;
+	lower_taps 16;
+	band_center 123.0;
+	time_delay 15.0;
+	tap_pos_C 1.025;
+	compensator_r_setting_C 0.0;
+};
+
+
+object line_configuration {
+	z11 1.0094+0.49316j;
+	z12 0.40973+0.10085j;
+	z13 0.40973+0.10085j;
+	z21 0.40973+0.10085j;
+	z22 1.0094+0.49316j;
+	z23 0.40973+0.10085j;
+	z31 0.40973+0.10085j;
+	z32 0.40973+0.10085j;
+	z33 1.0094+0.49316j;
+	c11 286.101593;
+    c22 286.101593;
+    c33 286.101593;
+	name line_config_1;
+};
+
+object line_configuration {
+	z11 1.6926+0.79176j;
+	z12 0.55009+0.34493j;
+	z13 0.55009+0.34493j;
+	z21 0.55009+0.34493j;
+	z22 1.6926+0.79176j;
+	z23 0.55009+0.34493j;
+	z31 0.55009+0.34493j;
+	z32 0.55009+0.34493j;
+	z33 1.6926+0.79176j;
+	c11 207.880539;
+    c22 207.880539;
+    c33 207.880539;
+	name line_config_2;
+};
+
+object line_configuration {
+	z11 0.61593+1.2094j;
+	z12 0.17093+0.43319j;
+	z13 0.17093+0.43319j;
+	z21 0.17093+0.43319j;
+	z22 0.61593+1.2094j;
+	z23 0.17093+0.43319j;
+	z31 0.17093+0.43319j;
+	z32 0.17093+0.43319j;
+	z33 0.61593+1.2094j;
+	name line_config_3;
+};
+
+object line_configuration {
+	z11 0.58925+1.0749j;
+	z12 0.1695+0.38788j;
+	z21 0.1695+0.38788j;
+	z22 0.58925+1.0749j;
+	name line_config_4;
+};
+
+object line_configuration {
+	z22 1.675338+1.210007j;
+	c22 207.880539;
+	name line_config_5;
+};
+ // ~ Rmatrix= (1.675338 ) 
+ // ~ Xmatrix= (1.210007 ) 
+ // ~ Cmatrix= (207.880539 )
+
+object line_configuration {
+	z33 1.675338+1.210007j;
+	c33 207.880539;
+	name line_config_6;
+};
+
+object line_configuration {
+	z11 1.194260+1.205420j;
+	name line_config_7;
+};
+ // ~ Rmatrix= (1.194260 ) 
+ // ~ Xmatrix= (1.205420 ) 
+
+object line_configuration {
+	z11 1.675338+1.210007j;
+	c11 207.880539;
+	name line_config_8;
+};
+
+object line_configuration {
+	z11 0.592473+1.065821j;
+	name line_config_9;
+};
+
+// object line_configuration {
+	// z11 0.592473+1.065821;
+	// name line_config_9;
+// };
+ // ~ Rmatrix= (0.592473 ) 
+ // ~ Xmatrix= (1.065821 ) 
+
+object line_configuration {
+	z11 1.1916+1.2095j;
+	z12 0.23485+0.48926j;
+	z13 0.23485+0.48926j;
+	z21 0.23485+0.48926j;
+	z22 1.1916+1.2095j;
+	z23 0.23485+0.48926j;
+	z31 0.23485+0.48926j;
+	z32 0.23485+0.48926j;
+	z33 1.1916+1.2095j;
+	name line_config_10;
+};
+
+object line_configuration {
+	z22 1.194260+1.205420j;
+	name line_config_11;
+};
+// object line_configuration {
+	// z22 1.194260+1.205420;
+	// name line_config_11;
+// };
+ // ~ Rmatrix= (1.194260 ) 
+ // ~ Xmatrix= (1.205420 ) 
+
+object line_configuration {
+	z33 1.194260+1.205420j;
+	name line_config_12;
+};
+// object line_configuration {
+	// z33 1.194260+1.205420;
+	// name line_config_12;
+// };
+
+
+object line_configuration {
+	z11 0.0001+0j;
+	z22 0.0001+0j;
+	z33 0.0001+0j;
+	name line_config_for_CB;
+};
+
+object line_configuration {
+	z11   5.4836+15.1865j;
+	z12   0.9410+4.6591j;
+	z13   0.9410+4.6591j;
+	z21   0.9410+4.6591j;
+	z22   5.4836+15.1865j;
+	z23   0.9410+4.6591j;
+	z31   0.9410+4.6591j;
+	z32   0.9410+4.6591j;
+	z33   5.4836+15.1865j;
+	name line_Vsource;
+};
+
+object underground_line {
+	length 2967.0000949440005;
+	configuration line_config_1;
+	name nl_1001_1002;
+	from nbus1001;
+	to nbus1002;
+	phases ABC;
+};
+
+object underground_line {
+	length 372.000011904;
+	configuration line_config_2;
+	name nl_1002_1003;
+	from nbus1002;
+	to nbus1003;
+	phases ABC;
+};
+
+object overhead_line {
+	length 638.000020416;
+	configuration line_config_3;
+	name nl_1002_1004;
+	from nbus1002;
+	to nbus1004;
+	phases ABC;
+};
+
+object overhead_line {
+	length 394.000012608;
+	configuration line_config_3;
+	name nl_1004_1005;
+	from nbus1004;
+	to nbus1005;
+	phases ABC;
+};
+
+object overhead_line {
+	length 1049.0000335680002;
+	configuration line_config_3;
+	name nl_1005_1006;
+	from nbus1005;
+	to nbus1006;
+	phases ABC;
+};
+
+object overhead_line {
+	length 2000.000064;
+	configuration line_config_4;
+	name nl_1006_1007;
+	from nbus1006;
+	to nbus1007;
+	phases AB;
+};
+
+object overhead_line {
+	length 454.000014528;
+	configuration line_config_3;
+	name nl_1006_1008;
+	from nbus1006;
+	to nbus1008;
+	phases ABC;
+};
+
+object overhead_line {
+	length 1082.0000346240001;
+	configuration line_config_3;
+	name nl_1008_1009;
+	from nbus1008;
+	to nbus1009;
+	phases ABC;
+};
+
+object overhead_line {
+	length 169.000005408;
+	configuration line_config_3;
+	name nl_1009_1010;
+	from nbus1009;
+	to nbus1010;
+	phases ABC;
+};
+
+object underground_line {
+	length 60.00000192;
+	configuration line_config_2;
+	name nl_1009_1011;
+	from nbus1009;
+	to nbus1011;
+	phases ABC;
+};
+
+object underground_line {
+	length 60.00000192;
+	configuration line_config_2;
+	name nl_1011_1012;
+	from nbus1011;
+	to nbus1012;
+	phases ABC;
+};
+
+object underground_line {
+	length 306.000009792;
+	configuration line_config_2;
+	name nl_1012_1013;
+	from nbus1012;
+	to nbus1013;
+	phases ABC;
+};
+
+object underground_line {
+	length 208.000006656;
+	configuration line_config_5;
+	name nl_1013_1014;
+	from nbus1013;
+	to nbus1014;
+	phases B;
+};
+
+object underground_line {
+	length 126.000004032;
+	configuration line_config_5;
+	name nl_1014_1015;
+	from nbus1014;
+	to nbus1015;
+	phases B;
+};
+
+object underground_line {
+	length 468.000014976;
+	configuration line_config_6;
+	name nl_1013_1016;
+	from nbus1013;
+	to nbus1016;
+	phases C;
+};
+
+object underground_line {
+	length 71.000002272;
+	configuration line_config_6;
+	name nl_1016_1017;
+	from nbus1016;
+	to nbus1017;
+	phases C;
+};
+
+object underground_line {
+	length 1388.000044416;
+	configuration line_config_1;
+	name nl_2001_2002;
+	from nbus2001;
+	to nbus2002;
+	phases ABC;
+};
+
+object overhead_line {
+	length 1281.000040992;
+	configuration line_config_3;
+	name nl_2002_2003;
+	from nbus2002;
+	to nbus2003;
+	phases ABC;
+};
+
+object overhead_line {
+	length 798.000025536;
+	configuration line_config_3;
+	name nl_2003_2004;
+	from nbus2003;
+	to nbus2004;
+	phases ABC;
+};
+
+object overhead_line {
+	length 317.000010144;
+	configuration line_config_3;
+	name nl_2004_2005;
+	from nbus2004;
+	to nbus2005;
+	phases ABC;
+};
+
+object overhead_line {
+	length 145.00000464000001;
+	configuration line_config_3;
+	name nl_2005_2006;
+	from nbus2005;
+	to nbus2006;
+	phases ABC;
+};
+
+object overhead_line {
+	length 245.00000784;
+	configuration line_config_7;
+	name nl_2006_2007;
+	from nbus2006;
+	to nbus2007;
+	phases A;
+};
+
+object underground_line {
+	length 125.000004;
+	configuration line_config_8;
+	name nl_2007_2008;
+	from nbus2007;
+	to nbus2008;
+	phases A;
+};
+
+object overhead_line {
+	length 161.000005152;
+	configuration line_config_9;
+	name nl_2007_2009;
+	from nbus2007;
+	to nbus2009;
+	phases A;
+};
+
+object overhead_line {
+	length 170.00000544;
+	configuration line_config_3;
+	name nl_2006_2010;
+	from nbus2006;
+	to nbus2010;
+	phases ABC;
+};
+
+object overhead_line {
+	length 275.00000880000005;
+	configuration line_config_3;
+	name nl_2010_2011;
+	from nbus2010;
+	to nbus2011;
+	phases ABC;
+};
+
+object overhead_line {
+	length 503.000016096;
+	configuration line_config_3;
+	name nl_2011_2012;
+	from nbus2011;
+	to nbus2012;
+	phases ABC;
+};
+
+object overhead_line {
+	length 268.000008576;
+	configuration line_config_3;
+	name nl_2013_2014;
+	from nbus2013;
+	to nbus2014;
+	phases ABC;
+};
+
+object underground_line {
+	length 120.00000384;
+	configuration line_config_5;
+	name nl_2014_2015;
+	from nbus2014;
+	to nbus2015;
+	phases B;
+};
+
+object overhead_line {
+	length 257.000008224;
+	configuration line_config_3;
+	name nl_2014_2016;
+	from nbus2014;
+	to nbus2016;
+	phases ABC;
+};
+
+object underground_line {
+	length 174.000005568;
+	configuration line_config_2;
+	name nl_2016_2017;
+	from nbus2016;
+	to nbus2017;
+	phases ABC;
+};
+
+object underground_line {
+	length 447.000014304;
+	configuration line_config_2;
+	name nl_2017_2018;
+	from nbus2017;
+	to nbus2018;
+	phases ABC;
+};
+
+object overhead_line {
+	length 45.000001440000005;
+	configuration line_config_3;
+	name nl_2013_2019;
+	from nbus2013;
+	to nbus2019;
+	phases ABC;
+};
+
+object underground_line {
+	length 642.000020544;
+	configuration line_config_5;
+	name nl_2019_2020;
+	from nbus2019;
+	to nbus2020;
+	phases B;
+};
+
+object overhead_line {
+	length 43.000001376;
+	configuration line_config_3;
+	name nl_2019_2021;
+	from nbus2019;
+	to nbus2021;
+	phases ABC;
+};
+
+object underground_line {
+	length 205.00000656;
+	configuration line_config_6;
+	name nl_2021_2022;
+	from nbus2021;
+	to nbus2022;
+	phases C;
+};
+
+object underground_line {
+	length 150.0000048;
+	configuration line_config_6;
+	name nl_2022_2023;
+	from nbus2022;
+	to nbus2023;
+	phases C;
+};
+
+object underground_line {
+	length 408.000013056;
+	configuration line_config_6;
+	name nl_2023_2024;
+	from nbus2023;
+	to nbus2024;
+	phases C;
+};
+
+object underground_line {
+	length 331.000010592;
+	configuration line_config_6;
+	name nl_2024_2025;
+	from nbus2024;
+	to nbus2025;
+	phases C;
+};
+
+object overhead_line {
+	length 369.000011808;
+	configuration line_config_3;
+	name nl_2026_2027;
+	from nbus2026;
+	to nbus2027;
+	phases ABC;
+};
+
+object underground_line {
+	length 285.00000912;
+	configuration line_config_2;
+	name nl_2027_2028;
+	from nbus2027;
+	to nbus2028;
+	phases ABC;
+};
+
+object underground_line {
+	length 131.000004192;
+	configuration line_config_2;
+	name nl_2028_2029;
+	from nbus2028;
+	to nbus2029;
+	phases ABC;
+};
+
+object underground_line {
+	length 165.00000528;
+	configuration line_config_2;
+	name nl_2029_2030;
+	from nbus2029;
+	to nbus2030;
+	phases ABC;
+};
+
+object underground_line {
+	length 245.00000784;
+	configuration line_config_2;
+	name nl_2030_2031;
+	from nbus2030;
+	to nbus2031;
+	phases ABC;
+};
+
+object overhead_line {
+	length 149.00000476800003;
+	configuration line_config_3;
+	name nl_2027_2032;
+	from nbus2027;
+	to nbus2032;
+	phases ABC;
+};
+
+object overhead_line {
+	length 289.000009248;
+	configuration line_config_3;
+	name nl_2032_2033;
+	from nbus2032;
+	to nbus2033;
+	phases ABC;
+};
+
+object overhead_line {
+	length 185.00000592;
+	configuration line_config_10;
+	name nl_2033_2034;
+	from nbus2033;
+	to nbus2034;
+	phases ABC;
+};
+
+object overhead_line {
+	length 160.00000512;
+	configuration line_config_3;
+	name nl_2033_2035;
+	from nbus2033;
+	to nbus2035;
+	phases ABC;
+};
+
+object overhead_line {
+	length 160.00000512;
+	configuration line_config_3;
+	name nl_2035_2036;
+	from nbus2035;
+	to nbus2036;
+	phases ABC;
+};
+
+object overhead_line {
+	length 80.00000256;
+	configuration line_config_3;
+	name nl_2036_2037;
+	from nbus2036;
+	to nbus2037;
+	phases ABC;
+};
+
+object overhead_line {
+	length 192.00000614400003;
+	configuration line_config_3;
+	name nl_2037_2038;
+	from nbus2037;
+	to nbus2038;
+	phases ABC;
+};
+
+object overhead_line {
+	length 800.0000256;
+	configuration line_config_3;
+	name nl_2038_2039;
+	from nbus2038;
+	to nbus2039;
+	phases ABC;
+};
+
+object overhead_line {
+	length 309.000009888;
+	configuration line_config_3;
+	name nl_2039_2040;
+	from nbus2039;
+	to nbus2040;
+	phases ABC;
+};
+
+object overhead_line {
+	length 383.00001225600005;
+	configuration line_config_3;
+	name nl_2040_2041;
+	from nbus2040;
+	to nbus2041;
+	phases ABC;
+};
+
+object underground_line {
+	length 35.00000112;
+	configuration line_config_2;
+	name nl_2039_2042;
+	from nbus2039;
+	to nbus2042;
+	phases ABC;
+};
+
+object underground_line {
+	length 158.000005056;
+	configuration line_config_2;
+	name nl_2042_2043;
+	from nbus2042;
+	to nbus2043;
+	phases ABC;
+};
+
+object underground_line {
+	length 342.000010944;
+	configuration line_config_2;
+	name nl_2043_2044;
+	from nbus2043;
+	to nbus2044;
+	phases ABC;
+};
+
+object underground_line {
+	length 323.000010336;
+	configuration line_config_5;
+	name nl_2044_2045;
+	from nbus2044;
+	to nbus2045;
+	phases B;
+};
+
+object underground_line {
+	length 330.00001056;
+	configuration line_config_5;
+	name nl_2045_2046;
+	from nbus2045;
+	to nbus2046;
+	phases B;
+};
+
+object underground_line {
+	length 189.00000604800002;
+	configuration line_config_5;
+	name nl_2045_2047;
+	from nbus2045;
+	to nbus2047;
+	phases B;
+};
+
+object underground_line {
+	length 259.000008288;
+	configuration line_config_5;
+	name nl_2047_2048;
+	from nbus2047;
+	to nbus2048;
+	phases B;
+};
+
+object underground_line {
+	length 130.00000416;
+	configuration line_config_2;
+	name nl_2044_2049;
+	from nbus2044;
+	to nbus2049;
+	phases ABC;
+};
+
+object underground_line {
+	length 124.000003968;
+	configuration line_config_2;
+	name nl_2049_2050;
+	from nbus2049;
+	to nbus2050;
+	phases ABC;
+};
+
+object underground_line {
+	length 139.000004448;
+	configuration line_config_2;
+	name nl_2050_2051;
+	from nbus2050;
+	to nbus2051;
+	phases ABC;
+};
+
+object underground_line {
+	length 134.000004288;
+	configuration line_config_2;
+	name nl_2051_2052;
+	from nbus2051;
+	to nbus2052;
+	phases ABC;
+};
+
+object underground_line {
+	length 464.000014848;
+	configuration line_config_2;
+	name nl_2044_2053;
+	from nbus2044;
+	to nbus2053;
+	phases ABC;
+};
+
+object underground_line {
+	length 139.000004448;
+	configuration line_config_2;
+	name nl_2053_2054;
+	from nbus2053;
+	to nbus2054;
+	phases ABC;
+};
+
+object underground_line {
+	length 156.000004992;
+	configuration line_config_2;
+	name nl_2054_2055;
+	from nbus2054;
+	to nbus2055;
+	phases ABC;
+};
+
+object underground_line {
+	length 204.000006528;
+	configuration line_config_2;
+	name nl_2055_2056;
+	from nbus2055;
+	to nbus2056;
+	phases ABC;
+};
+
+object underground_line {
+	length 761.0000243520001;
+	configuration line_config_2;
+	name nl_2053_2057;
+	from nbus2053;
+	to nbus2057;
+	phases ABC;
+};
+
+object underground_line {
+	length 407.000013024;
+	configuration line_config_2;
+	name nl_2057_2058;
+	from nbus2057;
+	to nbus2058;
+	phases ABC;
+};
+
+object underground_line {
+	length 685.00002192;
+	configuration line_config_2;
+	name nl_2057_2059;
+	from nbus2057;
+	to nbus2059;
+	phases ABC;
+};
+
+object underground_line {
+	length 304.000009728;
+	configuration line_config_2;
+	name nl_2059_2060;
+	from nbus2059;
+	to nbus2060;
+	phases ABC;
+};
+
+object underground_line {
+	length 2307.000073824;
+	configuration line_config_1;
+	name nl_3001_3003;
+	from nbus3001;
+	to nbus3003;
+	phases ABC;
+};
+
+object underground_line {
+	length 85.00000272;
+	configuration line_config_2;
+	name nl_3003_3002;
+	from nbus3003;
+	to nbus3002;
+	phases ABC;
+};
+
+object underground_line {
+	length 81.000002592;
+	configuration line_config_2;
+	name nl_3003_3004;
+	from nbus3003;
+	to nbus3004;
+	phases ABC;
+};
+
+object underground_line {
+	length 1997.0000639040002;
+	configuration line_config_1;
+	name nl_3003_3005;
+	from nbus3003;
+	to nbus3005;
+	phases ABC;
+};
+
+object overhead_line {
+	length 311.00000995199997;
+	configuration line_config_3;
+	name nl_3005_3006;
+	from nbus3005;
+	to nbus3006;
+	phases ABC;
+};
+
+object overhead_line {
+	length 370.00001184;
+	configuration line_config_3;
+	name nl_3006_3007;
+	from nbus3006;
+	to nbus3007;
+	phases ABC;
+};
+
+object overhead_line {
+	length 136.00000435200002;
+	configuration line_config_3;
+	name nl_3005_3008;
+	from nbus3005;
+	to nbus3008;
+	phases ABC;
+};
+
+object overhead_line {
+	length 161.000005152;
+	configuration line_config_7;
+	name nl_3008_3009;
+	from nbus3008;
+	to nbus3009;
+	phases A;
+};
+
+object overhead_line {
+	length 347.000011104;
+	configuration line_config_7;
+	name nl_3009_3010;
+	from nbus3009;
+	to nbus3010;
+	phases A;
+};
+
+object overhead_line {
+	length 265.00000848;
+	configuration line_config_7;
+	name nl_3010_3011;
+	from nbus3010;
+	to nbus3011;
+	phases A;
+};
+
+object overhead_line {
+	length 312.000009984;
+	configuration line_config_7;
+	name nl_3011_3012;
+	from nbus3011;
+	to nbus3012;
+	phases A;
+};
+
+object overhead_line {
+	length 170.00000544;
+	configuration line_config_11;
+	name nl_3008_3013;
+	from nbus3008;
+	to nbus3013;
+	phases B;
+};
+
+object overhead_line {
+	length 295.00000944000004;
+	configuration line_config_11;
+	name nl_3013_3014;
+	from nbus3013;
+	to nbus3014;
+	phases B;
+};
+
+object overhead_line {
+	length 322.000010304;
+	configuration line_config_3;
+	name nl_3008_3015;
+	from nbus3008;
+	to nbus3015;
+	phases ABC;
+};
+
+object overhead_line {
+	length 210.00000672000004;
+	configuration line_config_11;
+	name nl_3015_3016;
+	from nbus3015;
+	to nbus3016;
+	phases B;
+};
+
+object overhead_line {
+	length 259.000008288;
+	configuration line_config_11;
+	name nl_3016_3017;
+	from nbus3016;
+	to nbus3017;
+	phases B;
+};
+
+object overhead_line {
+	length 181.00000579200002;
+	configuration line_config_12;
+	name nl_3015_3018;
+	from nbus3015;
+	to nbus3018;
+	phases C;
+};
+
+object overhead_line {
+	length 281.000008992;
+	configuration line_config_12;
+	name nl_3018_3019;
+	from nbus3018;
+	to nbus3019;
+	phases C;
+};
+
+object overhead_line {
+	length 307.000009824;
+	configuration line_config_12;
+	name nl_3019_3020;
+	from nbus3019;
+	to nbus3020;
+	phases C;
+};
+
+object overhead_line {
+	length 303.000009696;
+	configuration line_config_12;
+	name nl_3020_3021;
+	from nbus3020;
+	to nbus3021;
+	phases C;
+};
+
+object overhead_line {
+	length 289.000009248;
+	configuration line_config_3;
+	name nl_3015_3022;
+	from nbus3015;
+	to nbus3022;
+	phases ABC;
+};
+
+object overhead_line {
+	length 181.00000579200002;
+	configuration line_config_7;
+	name nl_3022_3023;
+	from nbus3022;
+	to nbus3023;
+	phases A;
+};
+
+object overhead_line {
+	length 320.00001024;
+	configuration line_config_7;
+	name nl_3023_3024;
+	from nbus3023;
+	to nbus3024;
+	phases A;
+};
+
+object overhead_line {
+	length 331.000010592;
+	configuration line_config_7;
+	name nl_3024_3025;
+	from nbus3024;
+	to nbus3025;
+	phases A;
+};
+
+object overhead_line {
+	length 164.000005248;
+	configuration line_config_7;
+	name nl_3022_3026;
+	from nbus3022;
+	to nbus3026;
+	phases A;
+};
+
+object overhead_line {
+	length 368.000011776;
+	configuration line_config_7;
+	name nl_3026_3027;
+	from nbus3026;
+	to nbus3027;
+	phases A;
+};
+
+object overhead_line {
+	length 241.000007712;
+	configuration line_config_7;
+	name nl_3027_3028;
+	from nbus3027;
+	to nbus3028;
+	phases A;
+};
+
+object overhead_line {
+	length 317.000010144;
+	configuration line_config_7;
+	name nl_3028_3029;
+	from nbus3028;
+	to nbus3029;
+	phases A;
+};
+
+object overhead_line {
+	length 304.000009728;
+	configuration line_config_3;
+	name nl_3022_3030;
+	from nbus3022;
+	to nbus3030;
+	phases ABC;
+};
+
+object overhead_line {
+	length 103.000003296;
+	configuration line_config_3;
+	name nl_3030_3035;
+	from nbus3030;
+	to nbus3035;
+	phases ABC;
+};
+
+object overhead_line {
+	length 271.00000867200004;
+	configuration line_config_3;
+	name nl_3035_3036;
+	from nbus3035;
+	to nbus3036;
+	phases ABC;
+};
+
+object overhead_line {
+	length 136.00000435200002;
+	configuration line_config_3;
+	name nl_3036_3037;
+	from nbus3036;
+	to nbus3037;
+	phases ABC;
+};
+
+object overhead_line {
+	length 252.000008064;
+	configuration line_config_3;
+	name nl_3037_3038;
+	from nbus3037;
+	to nbus3038;
+	phases ABC;
+};
+
+object overhead_line {
+	length 235.00000752;
+	configuration line_config_3;
+	name nl_3038_3039;
+	from nbus3038;
+	to nbus3039;
+	phases ABC;
+};
+
+object overhead_line {
+	length 263.000008416;
+	configuration line_config_3;
+	name nl_3039_3053;
+	from nbus3039;
+	to nbus3053;
+	phases ABC;
+};
+
+object underground_line {
+	length 280.00000896;
+	configuration line_config_2;
+	name nl_3053_3054;
+	from nbus3053;
+	to nbus3054;
+	phases ABC;
+};
+
+object underground_line {
+	length 1335.00004272;
+	configuration line_config_5;
+	name nl_3053_3055;
+	from nbus3053;
+	to nbus3055;
+	phases B;
+};
+
+object underground_line {
+	length 128.000004096;
+	configuration line_config_5;
+	name nl_3055_3056;
+	from nbus3055;
+	to nbus3056;
+	phases B;
+};
+
+object underground_line {
+	length 178.00000569600002;
+	configuration line_config_5;
+	name nl_3056_3057;
+	from nbus3056;
+	to nbus3057;
+	phases B;
+};
+
+object underground_line {
+	length 178.00000569600002;
+	configuration line_config_5;
+	name nl_3057_3058;
+	from nbus3057;
+	to nbus3058;
+	phases B;
+};
+
+object underground_line {
+	length 274.00000876800004;
+	configuration line_config_5;
+	name nl_3058_3059;
+	from nbus3058;
+	to nbus3059;
+	phases B;
+};
+
+object underground_line {
+	length 77.000002464;
+	configuration line_config_5;
+	name nl_3059_3060;
+	from nbus3059;
+	to nbus3060;
+	phases B;
+};
+
+object underground_line {
+	length 184.000005888;
+	configuration line_config_5;
+	name nl_3060_3061;
+	from nbus3060;
+	to nbus3061;
+	phases B;
+};
+
+object underground_line {
+	length 443.000014176;
+	configuration line_config_5;
+	name nl_3055_3062;
+	from nbus3055;
+	to nbus3062;
+	phases B;
+};
+
+object underground_line {
+	length 198.000006336;
+	configuration line_config_5;
+	name nl_3062_3063;
+	from nbus3062;
+	to nbus3063;
+	phases B;
+};
+
+object underground_line {
+	length 157.000005024;
+	configuration line_config_5;
+	name nl_3063_3064;
+	from nbus3063;
+	to nbus3064;
+	phases B;
+};
+
+object underground_line {
+	length 205.00000656;
+	configuration line_config_5;
+	name nl_3064_3065;
+	from nbus3064;
+	to nbus3065;
+	phases B;
+};
+
+object underground_line {
+	length 123.000003936;
+	configuration line_config_5;
+	name nl_3065_3066;
+	from nbus3065;
+	to nbus3066;
+	phases B;
+};
+
+object underground_line {
+	length 274.00000876800004;
+	configuration line_config_5;
+	name nl_3066_3067;
+	from nbus3066;
+	to nbus3067;
+	phases B;
+};
+
+object overhead_line {
+	length 332.000010624;
+	configuration line_config_3;
+	name nl_3030_3040;
+	from nbus3030;
+	to nbus3040;
+	phases ABC;
+};
+
+object overhead_line {
+	length 144.000004608;
+	configuration line_config_12;
+	name nl_3040_3044;
+	from nbus3040;
+	to nbus3044;
+	phases C;
+};
+
+object overhead_line {
+	length 393.000012576;
+	configuration line_config_12;
+	name nl_3044_3045;
+	from nbus3044;
+	to nbus3045;
+	phases C;
+};
+
+object overhead_line {
+	length 121.00000387200001;
+	configuration line_config_12;
+	name nl_3040_3041;
+	from nbus3040;
+	to nbus3041;
+	phases C;
+};
+
+object overhead_line {
+	length 328.000010496;
+	configuration line_config_12;
+	name nl_3041_3042;
+	from nbus3041;
+	to nbus3042;
+	phases C;
+};
+
+object overhead_line {
+	length 418.000013376;
+	configuration line_config_12;
+	name nl_3042_3043;
+	from nbus3042;
+	to nbus3043;
+	phases C;
+};
+
+object overhead_line {
+	length 329.000010528;
+	configuration line_config_3;
+	name nl_3040_3046;
+	from nbus3040;
+	to nbus3046;
+	phases ABC;
+};
+
+object overhead_line {
+	length 219.00000700799998;
+	configuration line_config_3;
+	name nl_3046_3047;
+	from nbus3046;
+	to nbus3047;
+	phases ABC;
+};
+
+object overhead_line {
+	length 130.00000416;
+	configuration line_config_3;
+	name nl_3046_3048;
+	from nbus3046;
+	to nbus3048;
+	phases ABC;
+};
+
+object overhead_line {
+	length 226.000007232;
+	configuration line_config_3;
+	name nl_3048_3049;
+	from nbus3048;
+	to nbus3049;
+	phases ABC;
+};
+
+object overhead_line {
+	length 167.00000534400002;
+	configuration line_config_3;
+	name nl_3049_3050;
+	from nbus3049;
+	to nbus3050;
+	phases ABC;
+};
+
+object overhead_line {
+	length 360.00001152000004;
+	configuration line_config_3;
+	name nl_3050_3051;
+	from nbus3050;
+	to nbus3051;
+	phases ABC;
+};
+
+object overhead_line {
+	length 292.00000934400003;
+	configuration line_config_3;
+	name nl_3051_3052;
+	from nbus3051;
+	to nbus3052;
+	phases ABC;
+};
+
+object overhead_line {
+	length 243.000007776;
+	configuration line_config_3;
+	name nl_3030_3031;
+	from nbus3030;
+	to nbus3031;
+	phases ABC;
+};
+
+object overhead_line {
+	length 251.000008032;
+	configuration line_config_3;
+	name nl_3031_3032;
+	from nbus3031;
+	to nbus3032;
+	phases ABC;
+};
+
+object overhead_line {
+	length 388.000012416;
+	configuration line_config_3;
+	name nl_3032_3033;
+	from nbus3032;
+	to nbus3033;
+	phases ABC;
+};
+
+object overhead_line {
+	length 257.000008224;
+	configuration line_config_3;
+	name nl_3033_3034;
+	from nbus3033;
+	to nbus3034;
+	phases ABC;
+};
+
+object overhead_line {
+	length 164.000005248;
+	configuration line_config_3;
+	name nl_3034_3068;
+	from nbus3034;
+	to nbus3068;
+	phases ABC;
+};
+
+object overhead_line {
+	length 329.000010528;
+	configuration line_config_3;
+	name nl_3068_3069;
+	from nbus3068;
+	to nbus3069;
+	phases ABC;
+};
+
+object underground_line {
+	length 107.000003424;
+	configuration line_config_2;
+	name nl_3069_3070;
+	from nbus3069;
+	to nbus3070;
+	phases ABC;
+};
+
+object underground_line {
+	length 141.000004512;
+	configuration line_config_2;
+	name nl_3070_3071;
+	from nbus3070;
+	to nbus3071;
+	phases ABC;
+};
+
+object underground_line {
+	length 90.00000288000001;
+	configuration line_config_2;
+	name nl_3071_3072;
+	from nbus3071;
+	to nbus3072;
+	phases ABC;
+};
+
+object overhead_line {
+	length 20.00000064;
+	configuration line_config_3;
+	name nl_3069_3073;
+	from nbus3069;
+	to nbus3073;
+	phases ABC;
+};
+
+object overhead_line {
+	length 340.00001088;
+	configuration line_config_3;
+	name nl_3073_3074;
+	from nbus3073;
+	to nbus3074;
+	phases ABC;
+};
+
+object overhead_line {
+	length 188.00000601600001;
+	configuration line_config_3;
+	name nl_3068_3075;
+	from nbus3068;
+	to nbus3075;
+	phases ABC;
+};
+
+object overhead_line {
+	length 877.0000280639999;
+	configuration line_config_3;
+	name nl_3076_3077;
+	from nbus3076;
+	to nbus3077;
+	phases ABC;
+};
+
+object overhead_line {
+	length 80.00000256;
+	configuration line_config_3;
+	name nl_3077_3078;
+	from nbus3077;
+	to nbus3078;
+	phases ABC;
+};
+
+object overhead_line {
+	length 191.00000611200002;
+	configuration line_config_3;
+	name nl_3076_3079;
+	from nbus3076;
+	to nbus3079;
+	phases ABC;
+};
+
+object overhead_line {
+	length 604.000019328;
+	configuration line_config_3;
+	name nl_3079_3080;
+	from nbus3079;
+	to nbus3080;
+	phases ABC;
+};
+
+object overhead_line {
+	length 195.00000624;
+	configuration line_config_3;
+	name nl_3080_3081;
+	from nbus3080;
+	to nbus3081;
+	phases ABC;
+};
+
+object overhead_line {
+	length 540.0000172800001;
+	configuration line_config_3;
+	name nl_3080_3082;
+	from nbus3080;
+	to nbus3082;
+	phases ABC;
+};
+
+object underground_line {
+	length 125.000004;
+	configuration line_config_8;
+	name nl_3082_3083;
+	from nbus3082;
+	to nbus3083;
+	phases A;
+};
+
+object underground_line {
+	length 196.000006272;
+	configuration line_config_8;
+	name nl_3083_3084;
+	from nbus3083;
+	to nbus3084;
+	phases A;
+};
+
+object underground_line {
+	length 515.00001648;
+	configuration line_config_8;
+	name nl_3084_3085;
+	from nbus3084;
+	to nbus3085;
+	phases A;
+};
+
+object underground_line {
+	length 338.000010816;
+	configuration line_config_8;
+	name nl_3085_3086;
+	from nbus3085;
+	to nbus3086;
+	phases A;
+};
+
+object underground_line {
+	length 239.000007648;
+	configuration line_config_8;
+	name nl_3086_3087;
+	from nbus3086;
+	to nbus3087;
+	phases A;
+};
+
+object underground_line {
+	length 420.0000134400001;
+	configuration line_config_8;
+	name nl_3087_3088;
+	from nbus3087;
+	to nbus3088;
+	phases A;
+};
+
+object underground_line {
+	length 112.000003584;
+	configuration line_config_8;
+	name nl_3088_3089;
+	from nbus3088;
+	to nbus3089;
+	phases A;
+};
+
+object underground_line {
+	length 565.00001808;
+	configuration line_config_8;
+	name nl_3089_3090;
+	from nbus3089;
+	to nbus3090;
+	phases A;
+};
+
+object underground_line {
+	length 222.000007104;
+	configuration line_config_8;
+	name nl_3090_3091;
+	from nbus3090;
+	to nbus3091;
+	phases A;
+};
+
+object underground_line {
+	length 185.00000592;
+	configuration line_config_2;
+	name nl_3082_3092;
+	from nbus3082;
+	to nbus3092;
+	phases ABC;
+};
+
+object underground_line {
+	length 230.00000735999998;
+	configuration line_config_8;
+	name nl_3092_3093;
+	from nbus3092;
+	to nbus3093;
+	phases A;
+};
+
+object underground_line {
+	length 125.000004;
+	configuration line_config_8;
+	name nl_3093_3094;
+	from nbus3093;
+	to nbus3094;
+	phases A;
+};
+
+object underground_line {
+	length 65.00000208;
+	configuration line_config_8;
+	name nl_3094_3095;
+	from nbus3094;
+	to nbus3095;
+	phases A;
+};
+
+object underground_line {
+	length 296.00000947200004;
+	configuration line_config_8;
+	name nl_3095_3096;
+	from nbus3095;
+	to nbus3096;
+	phases A;
+};
+
+object underground_line {
+	length 117.000003744;
+	configuration line_config_8;
+	name nl_3096_3097;
+	from nbus3096;
+	to nbus3097;
+	phases A;
+};
+
+object underground_line {
+	length 284.000009088;
+	configuration line_config_5;
+	name nl_3092_3098;
+	from nbus3092;
+	to nbus3098;
+	phases B;
+};
+
+object underground_line {
+	length 368.000011776;
+	configuration line_config_5;
+	name nl_3098_3099;
+	from nbus3098;
+	to nbus3099;
+	phases B;
+};
+
+object underground_line {
+	length 91.00000291200001;
+	configuration line_config_2;
+	name nl_3092_3100;
+	from nbus3092;
+	to nbus3100;
+	phases ABC;
+};
+
+object underground_line {
+	length 157.000005024;
+	configuration line_config_6;
+	name nl_3100_3101;
+	from nbus3100;
+	to nbus3101;
+	phases C;
+};
+
+object underground_line {
+	length 225.0000072;
+	configuration line_config_6;
+	name nl_3101_3102;
+	from nbus3101;
+	to nbus3102;
+	phases C;
+};
+
+object underground_line {
+	length 134.000004288;
+	configuration line_config_6;
+	name nl_3102_3103;
+	from nbus3102;
+	to nbus3103;
+	phases C;
+};
+
+object underground_line {
+	length 223.000007136;
+	configuration line_config_6;
+	name nl_3100_3104;
+	from nbus3100;
+	to nbus3104;
+	phases C;
+};
+
+object underground_line {
+	length 120.00000384;
+	configuration line_config_6;
+	name nl_3104_3105;
+	from nbus3104;
+	to nbus3105;
+	phases C;
+};
+
+object underground_line {
+	length 181.00000579200002;
+	configuration line_config_6;
+	name nl_3105_3106;
+	from nbus3105;
+	to nbus3106;
+	phases C;
+};
+
+object underground_line {
+	length 1461.0000467520001;
+	configuration line_config_1;
+	name nl_3082_3107;
+	from nbus3082;
+	to nbus3107;
+	phases ABC;
+};
+
+object underground_line {
+	length 466.000014912;
+	configuration line_config_8;
+	name nl_3107_3108;
+	from nbus3107;
+	to nbus3108;
+	phases A;
+};
+
+object underground_line {
+	length 136.00000435200002;
+	configuration line_config_8;
+	name nl_3108_3109;
+	from nbus3108;
+	to nbus3109;
+	phases A;
+};
+
+object underground_line {
+	length 152.000004864;
+	configuration line_config_8;
+	name nl_3109_3110;
+	from nbus3109;
+	to nbus3110;
+	phases A;
+};
+
+object underground_line {
+	length 276.00000883200005;
+	configuration line_config_8;
+	name nl_3110_3111;
+	from nbus3110;
+	to nbus3111;
+	phases A;
+};
+
+object underground_line {
+	length 328.000010496;
+	configuration line_config_8;
+	name nl_3111_3112;
+	from nbus3111;
+	to nbus3112;
+	phases A;
+};
+
+object underground_line {
+	length 245.00000784;
+	configuration line_config_5;
+	name nl_3107_3113;
+	from nbus3107;
+	to nbus3113;
+	phases B;
+};
+
+object underground_line {
+	length 149.00000476800003;
+	configuration line_config_5;
+	name nl_3113_3114;
+	from nbus3113;
+	to nbus3114;
+	phases B;
+};
+
+object underground_line {
+	length 331.000010592;
+	configuration line_config_5;
+	name nl_3114_3115;
+	from nbus3114;
+	to nbus3115;
+	phases B;
+};
+
+object underground_line {
+	length 456.000014592;
+	configuration line_config_5;
+	name nl_3113_3116;
+	from nbus3113;
+	to nbus3116;
+	phases B;
+};
+
+object underground_line {
+	length 112.000003584;
+	configuration line_config_5;
+	name nl_3116_3117;
+	from nbus3116;
+	to nbus3117;
+	phases B;
+};
+
+object underground_line {
+	length 2267.0000725440004;
+	configuration line_config_1;
+	name nl_3107_3118;
+	from nbus3107;
+	to nbus3118;
+	phases ABC;
+};
+
+object underground_line {
+	length 464.000014848;
+	configuration line_config_5;
+	name nl_3118_3119;
+	from nbus3118;
+	to nbus3119;
+	phases B;
+};
+
+object underground_line {
+	length 350.0000112;
+	configuration line_config_5;
+	name nl_3119_3120;
+	from nbus3119;
+	to nbus3120;
+	phases B;
+};
+
+object underground_line {
+	length 206.000006592;
+	configuration line_config_5;
+	name nl_3120_3121;
+	from nbus3120;
+	to nbus3121;
+	phases B;
+};
+
+object underground_line {
+	length 177.000005664;
+	configuration line_config_5;
+	name nl_3121_3122;
+	from nbus3121;
+	to nbus3122;
+	phases B;
+};
+
+object underground_line {
+	length 91.00000291200001;
+	configuration line_config_5;
+	name nl_3119_3123;
+	from nbus3119;
+	to nbus3123;
+	phases B;
+};
+
+object underground_line {
+	length 67.000002144;
+	configuration line_config_5;
+	name nl_3123_3124;
+	from nbus3123;
+	to nbus3124;
+	phases B;
+};
+
+object underground_line {
+	length 151.000004832;
+	configuration line_config_5;
+	name nl_3124_3125;
+	from nbus3124;
+	to nbus3125;
+	phases B;
+};
+
+object underground_line {
+	length 343.000010976;
+	configuration line_config_5;
+	name nl_3125_3126;
+	from nbus3125;
+	to nbus3126;
+	phases B;
+};
+
+object underground_line {
+	length 234.000007488;
+	configuration line_config_5;
+	name nl_3126_3127;
+	from nbus3126;
+	to nbus3127;
+	phases B;
+};
+
+object underground_line {
+	length 238.000007616;
+	configuration line_config_5;
+	name nl_3127_3128;
+	from nbus3127;
+	to nbus3128;
+	phases B;
+};
+
+object underground_line {
+	length 243.000007776;
+	configuration line_config_5;
+	name nl_3128_3129;
+	from nbus3128;
+	to nbus3129;
+	phases B;
+};
+
+object underground_line {
+	length 230.00000735999998;
+	configuration line_config_5;
+	name nl_3129_3130;
+	from nbus3129;
+	to nbus3130;
+	phases B;
+};
+
+object underground_line {
+	length 194.000006208;
+	configuration line_config_5;
+	name nl_3130_3131;
+	from nbus3130;
+	to nbus3131;
+	phases B;
+};
+
+object underground_line {
+	length 501.000016032;
+	configuration line_config_8;
+	name nl_3118_3132;
+	from nbus3118;
+	to nbus3132;
+	phases A;
+};
+
+object underground_line {
+	length 145.00000464000001;
+	configuration line_config_8;
+	name nl_3132_3133;
+	from nbus3132;
+	to nbus3133;
+	phases A;
+};
+
+object underground_line {
+	length 281.000008992;
+	configuration line_config_8;
+	name nl_3133_3134;
+	from nbus3133;
+	to nbus3134;
+	phases A;
+};
+
+object underground_line {
+	length 240.00000768;
+	configuration line_config_8;
+	name nl_3134_3135;
+	from nbus3134;
+	to nbus3135;
+	phases A;
+};
+
+object underground_line {
+	length 367.000011744;
+	configuration line_config_8;
+	name nl_3135_3136;
+	from nbus3135;
+	to nbus3136;
+	phases A;
+};
+
+object underground_line {
+	length 252.000008064;
+	configuration line_config_8;
+	name nl_3133_3137;
+	from nbus3133;
+	to nbus3137;
+	phases A;
+};
+
+object underground_line {
+	length 351.000011232;
+	configuration line_config_8;
+	name nl_3137_3138;
+	from nbus3137;
+	to nbus3138;
+	phases A;
+};
+
+object underground_line {
+	length 289.000009248;
+	configuration line_config_8;
+	name nl_3138_3139;
+	from nbus3138;
+	to nbus3139;
+	phases A;
+};
+
+object underground_line {
+	length 255.00000816000002;
+	configuration line_config_6;
+	name nl_3107_3140;
+	from nbus3107;
+	to nbus3140;
+	phases C;
+};
+
+object underground_line {
+	length 134.000004288;
+	configuration line_config_6;
+	name nl_3140_3141;
+	from nbus3140;
+	to nbus3141;
+	phases C;
+};
+
+object underground_line {
+	length 193.000006176;
+	configuration line_config_6;
+	name nl_3141_3142;
+	from nbus3141;
+	to nbus3142;
+	phases C;
+};
+
+object underground_line {
+	length 202.000006464;
+	configuration line_config_6;
+	name nl_3142_3143;
+	from nbus3142;
+	to nbus3143;
+	phases C;
+};
+
+object underground_line {
+	length 147.00000470400002;
+	configuration line_config_6;
+	name nl_3140_3148;
+	from nbus3140;
+	to nbus3148;
+	phases C;
+};
+
+object underground_line {
+	length 253.00000809600002;
+	configuration line_config_6;
+	name nl_3148_3149;
+	from nbus3148;
+	to nbus3149;
+	phases C;
+};
+
+object underground_line {
+	length 139.000004448;
+	configuration line_config_6;
+	name nl_3149_3150;
+	from nbus3149;
+	to nbus3150;
+	phases C;
+};
+
+object underground_line {
+	length 156.000004992;
+	configuration line_config_6;
+	name nl_3150_3151;
+	from nbus3150;
+	to nbus3151;
+	phases C;
+};
+
+object underground_line {
+	length 260.00000832;
+	configuration line_config_6;
+	name nl_3151_3152;
+	from nbus3151;
+	to nbus3152;
+	phases C;
+};
+
+object underground_line {
+	length 139.000004448;
+	configuration line_config_6;
+	name nl_3152_3153;
+	from nbus3152;
+	to nbus3153;
+	phases C;
+};
+
+object underground_line {
+	length 119.000003808;
+	configuration line_config_6;
+	name nl_3153_3154;
+	from nbus3153;
+	to nbus3154;
+	phases C;
+};
+
+object underground_line {
+	length 505.00001616000003;
+	configuration line_config_6;
+	name nl_3154_3155;
+	from nbus3154;
+	to nbus3155;
+	phases C;
+};
+
+object underground_line {
+	length 319.000010208;
+	configuration line_config_6;
+	name nl_3140_3156;
+	from nbus3140;
+	to nbus3156;
+	phases C;
+};
+
+object underground_line {
+	length 122.000003904;
+	configuration line_config_6;
+	name nl_3156_3144;
+	from nbus3156;
+	to nbus3144;
+	phases C;
+};
+
+object underground_line {
+	length 178.00000569600002;
+	configuration line_config_6;
+	name nl_3144_3145;
+	from nbus3144;
+	to nbus3145;
+	phases C;
+};
+
+object underground_line {
+	length 178.00000569600002;
+	configuration line_config_6;
+	name nl_3145_3146;
+	from nbus3145;
+	to nbus3146;
+	phases C;
+};
+
+object underground_line {
+	length 178.00000569600002;
+	configuration line_config_6;
+	name nl_3146_3147;
+	from nbus3146;
+	to nbus3147;
+	phases C;
+};
+
+object underground_line {
+	length 153.000004896;
+	configuration line_config_6;
+	name nl_3156_3157;
+	from nbus3156;
+	to nbus3157;
+	phases C;
+};
+
+object underground_line {
+	length 295.00000944000004;
+	configuration line_config_6;
+	name nl_3157_3158;
+	from nbus3157;
+	to nbus3158;
+	phases C;
+};
+
+object underground_line {
+	length 257.000008224;
+	configuration line_config_6;
+	name nl_3158_3159;
+	from nbus3158;
+	to nbus3159;
+	phases C;
+};
+
+object underground_line {
+	length 243.000007776;
+	configuration line_config_6;
+	name nl_3159_3160;
+	from nbus3159;
+	to nbus3160;
+	phases C;
+};
+
+object underground_line {
+	length 237.000007584;
+	configuration line_config_6;
+	name nl_3160_3161;
+	from nbus3160;
+	to nbus3161;
+	phases C;
+};
+
+object underground_line {
+	length 176.000005632;
+	configuration line_config_6;
+	name nl_3161_3162;
+	from nbus3161;
+	to nbus3162;
+	phases C;
+};
+
+object underground_line {
+	length 1;
+	configuration line_config_for_CB;
+	name ncb_101;
+	from nbus1;
+	to nbus1001;
+	phases ABC;
+};
+
+object underground_line {
+	length 1;
+	configuration line_config_for_CB;
+	name ncb_201;
+	from nbus1;
+	to nbus2001;
+	phases ABC;
+};
+
+object underground_line {
+	length 1;
+	configuration line_config_for_CB;
+	name ncb_202;
+	from nbus2012;
+	to nbus2013;
+	phases ABC;
+};
+
+object underground_line {
+	length 1;
+	configuration line_config_for_CB;
+	name ncb_203;
+	from nbus2021;
+	to nbus2026;
+	phases ABC;
+};
+
+object underground_line {
+	length 1;
+	configuration line_config_for_CB;
+	name ncb_301;
+	from nbus1;
+	to nbus3001;
+	phases ABC;
+};
+
+object underground_line {
+	length 1;
+	configuration line_config_for_CB;
+	name ncb_302;
+	from nbus3075;
+	to nbus3076;
+	phases ABC;
+};
+
+object group_recorder {
+	name simple_group_recorder;
+	group class=overhead_line;
+	file over_head_line_powerA_29.csv;
+	interval 1;
+	property power_in_A;
+	complex_part MAG;
+};
+
+object group_recorder {
+	name simple_group_recorder1;
+	group class=load;
+	file load_voltageA_29.csv;
+	interval 1;
+	property measured_voltage_A;
+	complex_part MAG;
+};
+

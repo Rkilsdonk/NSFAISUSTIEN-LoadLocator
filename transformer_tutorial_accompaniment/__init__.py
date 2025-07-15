@@ -3,4 +3,4 @@ from .utils import gen_batch, jagged_to_padded, benchmark
 from .te_layer import TransformerEncoderLayer
 from .td_layer import TransformerDecoderLayer
 from .transformer import Transformer, TransformerDecoder, TransformerEncoder
-from .tstransformer import PositionalEncoding, TsTransformer
+from .tstransformer import PositionalEncoding, TsTransformer, LSTMGS, ActiveTransformer

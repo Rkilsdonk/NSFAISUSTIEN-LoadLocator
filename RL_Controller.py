@@ -17,23 +17,25 @@ import json as json
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
+import cmath as cmath
 #from transformer tutorial pytorch
 from transformer_tutorial_accompaniment import MultiHeadAttention
 from transformer_tutorial_accompaniment import gen_batch, jagged_to_padded, benchmark
 from transformer_tutorial_accompaniment import TransformerEncoderLayer
 from transformer_tutorial_accompaniment import TransformerDecoderLayer
-from transformer_tutorial_accompaniment import Transformer, TransformerDecoder, TransformerEncoder,TsTransformer
+from transformer_tutorial_accompaniment import Transformer, TransformerDecoder, TransformerEncoder,TsTransformer,LSTMGS, ActiveTransformer
 
 
 logger = logging.getLogger(__name__)
 logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
-def parse_complex(s: str) -> complex:
+def parse_voltage(s: str) -> complex:
     # drop the trailing “ V” and parse Python complex
     s = s.strip()
     if s.endswith("V"):
         s = s[:-1].strip()
-    return complex(s)
+    complexvalue=cmath.polar(complex(s)/120)#p.u. numbers
+    return complexvalue #seeing if polar coordinates work better
 
 def destroy_federate(fed):
     grantedtime = h.helicsFederateRequestTime(fed, h.HELICS_TIME_MAXTIME)
@@ -78,7 +80,9 @@ if __name__ == "__main__":
 
     plotting = False ## Adjust this flag to visulaize the control actions aas the simulation progresses
     hours = 24
+    val_switchHour=23
     total_inteval = int(60 * 60 * hours)
+    val_interval= int(60*60*val_switchHour)
     grantedtime = -1
     update_interval = 60*5 ## Adjust this to change EV update interval
     feeder_limit_upper = 4 * (1000 * 1000) ## Adjust this to change upper limit to trigger EVs
@@ -87,8 +91,10 @@ if __name__ == "__main__":
     EV_data = {}
     time_sim = []
     feeder_real_power = []
-    activeLearning=False
-
+    LoadInfo=False
+    UncSeek=False
+    olooplen=5
+    predictederror=0
     if plotting:
         ax ={}
         fig = plt.figure()
@@ -103,13 +109,22 @@ if __name__ == "__main__":
         ax['Loss']=plt.subplot(111)
 
     voltageTimeSeries=None
-    commandTimeSeries=pt.zeros([1,endpoint_count])
-    commandCurrentVals=pt.zeros([endpoint_count])
-    learning_rate = .0001
-    loss=nn.MSELoss()
+    commandTimeSeries=pt.ones([1,endpoint_count])
+    commandCurrentVals=pt.ones([endpoint_count])
+    learning_rate = .001
+    if(UncSeek==False):
+        loss=nn.MSELoss()
+    else:
+        loss=nn.MSELoss(reduction='none')
     epoch=-1
     model=None
     optimizer=None
+    #to select a random subset of meters
+    metercount=None
+    meter_keys=None
+    phase_keys=None
+    predictions=None
+
     for t in range(0, total_inteval, update_interval):
         epoch+=1
         while grantedtime < t:
@@ -129,7 +144,11 @@ if __name__ == "__main__":
             data = json.loads(inputvolts)
 
 # 2) fix ordering of meters & phases
-            meter_keys = sorted(data.keys())
+            meter_keys = sorted(data.keys())    
+            if (metercount!=None):
+                pt.randperm(len(meter_keys))
+                meter_keys=meter_keys[0:metercount]
+                meter_keys=sorted(meter_keys)
             phase_keys = [
             "measured_voltage_1",
             "measured_voltage_2",
@@ -140,14 +159,12 @@ if __name__ == "__main__":
             vals = []
             for m in meter_keys:
                 for ph in phase_keys:
-                    c = parse_complex(data[m][ph])
-                    vals.append(c.real)
-                    vals.append(c.imag)
-            if(activeLearning==True):
+                    c = parse_voltage(data[m][ph])
+                    vals.append(c[0])
+                    vals.append(c[1])
+            if(LoadInfo==True):
                 for i in range(endpoint_count):
-                    for ph in phase_keys:
-                        vals.append(commandCurrentVals[i]) #commands are floats, not complex, but this makes tensor regular
-                        vals.append(0)
+                    vals.append(commandCurrentVals[i]) #commands are floats, not complex, but this makes tensor regular
             t_real_imag = pt.tensor(vals, dtype=pt.float32)
             voltageTimeSeries=t_real_imag.unsqueeze(0)
             #model=Transformer(d_model=voltageTimeSeries.size(1),nhead=6)
@@ -155,10 +172,13 @@ if __name__ == "__main__":
                # pt.nn.init.uniform_(p, a=0, b=1)
             width=voltageTimeSeries.size(1)
             #logger.info(voltageTimeSeries.size())
-            if(activeLearning==False):
-                model=TsTransformer(d_input=width,d_output=width,d_latent=4096,numblocks=8,nheads=8)
+            if(LoadInfo==False):
+                model=TsTransformer(d_input=width,d_output=width,d_latent=2048,numblocks=6,nheads=8)
+                #model=LSTMGS(d_input=width,d_output=width,d_latent=2048,numblocks=10)
+            elif(UncSeek==True):
+                model=ActiveTransformer(d_input=width,d_output=(width-endpoint_count+1),d_latent=2048,numblocks=6,nheads=8)
             else:
-                model=activeLearningTransformer()
+                model=TsTransformer(d_input=width,d_output=(width-endpoint_count),d_latent=2048,numblocks=6,nheads=8)
             optimizer = pt.optim.SGD(model.parameters(True), lr=learning_rate)
             model.train()
         if(t!=0):
@@ -166,41 +186,143 @@ if __name__ == "__main__":
             data = json.loads(inputvolts)
 
 # 2) fix ordering of meters & phases
-            meter_keys = sorted(data.keys())
-            phase_keys = [
-            "measured_voltage_1",
-            "measured_voltage_2",
-            "measured_voltage_N",
-            ]
+            
 
 # 3) build a nested list: [ [ [real, imag], … ], … ]
             vals = []
             for m in meter_keys:
                 for ph in phase_keys:
-                    c = parse_complex(data[m][ph])
-                    vals.append(c.real)
-                    vals.append(c.imag)
-            if(activeLearning==True):
+                    c = parse_voltage(data[m][ph])
+                    vals.append(c[0])
+                    vals.append(c[1])
+            if(LoadInfo==True):
                 for i in range(endpoint_count):
-                    for ph in phase_keys:
-                        vals.append(commandCurrentVals[i]) #commands are floats, not complex, but this makes tensor regular
-                        vals.append(0)
+                    vals.append(commandCurrentVals[i]) #commands are floats, not complex, but this makes tensor regular
             t_real_imag = pt.tensor(vals, dtype=pt.float32) #squeeze to [t,m*f],because transformers want flat+add control history Then build predictor
             
 
-            #train
-            predictions=120*model.forward(voltageTimeSeries/120)
-            #logger.info(voltageTimeSeries.shape)
+            #train                
             voltageTimeSeries=pt.cat((voltageTimeSeries,t_real_imag.unsqueeze(0)))
-            error=loss(predictions,voltageTimeSeries[1:])
-            #logger.info(predictions)
-            logger.info("Results")
-            logger.info(voltageTimeSeries[1:]-predictions)
-            logger.info(error)
-            error.backward()
-            optimizer.step()
-            optimizer.zero_grad() 
-            #infer
+            #logger.info(voltageTimeSeries.shape)
+            logger.info(loss(voltageTimeSeries[-1:],voltageTimeSeries[1:]))
+            error=None
+            if(LoadInfo==False and t<val_interval):#valdiationsplit
+                for i in range(olooplen):
+                    predictions=model.forward(voltageTimeSeries[:-1])#normalize model to prevent gradient blowup
+                    error=loss(predictions,voltageTimeSeries[1:])
+                    logger.info(loss(predictions[-1],voltageTimeSeries[-2]))
+                    #logger.info(predictions)
+                    error.backward()
+                    optimizer.step()
+                    optimizer.zero_grad() 
+                #infer                #
+                #logger.info(voltageTimeSeries[1:]-predictions)
+                #logger.info(pt.argmax(voltageTimeSeries[1:]-predictions))
+                #logger.info(pt.argmin(voltageTimeSeries[1:]-predictions))
+
+            if(LoadInfo==True and UncSeek==False and t<val_interval):#valdiationsplit
+                for i in range(olooplen):
+                    predictions=model.forward(voltageTimeSeries[:-1])#normalize model to prevent gradient blowup
+                    logger.info(predictions.shape)
+                    logger.info(voltageTimeSeries[1:,:-endpoint_count].shape)
+                    error=loss(predictions,voltageTimeSeries[1:,:-endpoint_count])
+                    logger.info(error)
+                    #logger.info(predictions)
+                    error.backward()
+                    optimizer.step()
+                    optimizer.zero_grad()
+                    commandCurrentVals=pt.randint(high=2,size=commandCurrentVals.shape)
+                    for i in range(1,endpoint_count):
+                        if(commandCurrentVals[-i]!=commandTimeSeries[-1][-i]):
+                            end = endid["m{}".format(i-1)]
+                            source_end_name = str(h.helicsEndpointGetName(end))
+                            dest_end_name   = str(h.helicsEndpointGetDefaultDestination(end))
+                            msg = h.helicsFederateCreateMessage(fed)
+
+                            h.helicsMessageSetString(msg, str(complex(commandCurrentVals[-i])))
+                            status = h.helicsEndpointSendMessage(end, msg)
+                    logger.info(commandCurrentVals)
+                    voltageTimeSeries[:-1,-i:]=0
+                offeffect=model.forward(voltageTimeSeries)[-1]
+                voltageTimeSeries[:-1,-i:]=1
+                oneffect=model.forward(voltageTimeSeries)[-1]
+                logger.info(offeffect-oneffect)
+        
+                #infer                #
+                #logger.info(voltageTimeSeries[1:]-predictions)
+                #logger.info(pt.argmax(voltageTimeSeries[1:]-predictions))
+                #logger.info(pt.argmin(voltageTimeSeries[1:]-predictions))
+            
+            if(UncSeek==True and t<val_interval):
+                for i in range(olooplen):
+                    predictions=model.forward(voltageTimeSeries[:-1])#normalize model to prevent gradient blowup
+                    error=pt.mean(input=(loss(predictions[:,:-1],voltageTimeSeries[1:,:-endpoint_count])),dim=1)
+                    uncerror=loss(predictions[1:,-1],error[:-1])#Uncertainty quantification
+                    finerror=pt.mean(error)+pt.mean(uncerror)
+                    logger.info(error[-1])
+                    #logger.info(predictions)
+                    finerror.backward()
+                    optimizer.step()
+                    optimizer.zero_grad()
+                #uncertainty guided (jacobian of predicted error with respect to)
+                def model_slice(x):
+        # Function that returns only the output slice we care about
+                    full_output = model(x)
+                    return full_output[-1,-1]
+                jacobian=pt.func.jacrev(model_slice)(voltageTimeSeries)
+                jacobian=jacobian[-1,-endpoint_count:]
+                #try reversing
+                jacobian=jacobian*-1
+                logger.info(jacobian)
+                for i in range(endpoint_count):
+                    if(jacobian[i]<0):
+                        commandCurrentVals[i]=0
+                        if(voltageTimeSeries[-1][width-endpoint_count+i]!=0):
+                            voltageTimeSeries[-1][width-endpoint_count+i]=0
+                            end = endid["m{}".format(i)]
+                            source_end_name = str(h.helicsEndpointGetName(end))
+                            dest_end_name   = str(h.helicsEndpointGetDefaultDestination(end))
+                            msg = h.helicsFederateCreateMessage(fed)
+                            h.helicsMessageSetString(msg, '0+0j')
+                            status = h.helicsEndpointSendMessage(end, msg)
+                    else:
+                        commandCurrentVals[i]=1
+                        if(voltageTimeSeries[-1][width-endpoint_count+i]!=1):
+                            voltageTimeSeries[-1][width-endpoint_count+i]=1
+                            end = endid["m{}".format(i)]
+                            source_end_name = str(h.helicsEndpointGetName(end))
+                            dest_end_name   = str(h.helicsEndpointGetDefaultDestination(end))
+                            msg = h.helicsFederateCreateMessage(fed)
+                            h.helicsMessageSetString(msg, '200000+0j')
+                            status = h.helicsEndpointSendMessage(end, msg)
+                commandTimeSeries=pt.cat((commandTimeSeries,commandCurrentVals.unsqueeze(0)))
+                logger.info(commandCurrentVals)
+                            
+                #infer
+                # if(LoadInfo==True):
+                #     voltagetemp=voltageTimeSeries[:-1,-i:].clone()
+                #     voltageTimeSeries[:-1,-i:]=0
+                #     offeffect=model.forward(voltageTimeSeries)[-1]
+                #     voltageTimeSeries[:-1,-i:]=1
+                #     oneffect=model.forward(voltageTimeSeries)[-1]
+                #     logger.info(offeffect-oneffect)
+                #     voltageTimeSeries[:-1,-i:]=voltagetemp
+            validation_error=0
+            if(t>val_interval):
+                if(LoadInfo and UncSeek):
+                    predictions=model.forward(voltageTimeSeries[:-1])
+                    error=pt.mean(input=(loss(predictions[:,:-1],voltageTimeSeries[1:,:-endpoint_count])))
+                    validation_error=validation_error+error
+                elif(LoadInfo and not UncSeek):
+                    predictions=model.forward(voltageTimeSeries[:-1])
+                    error=pt.mean(input=(loss(predictions,voltageTimeSeries[1:,:-endpoint_count])))
+                    validation_error=validation_error+error
+                else:
+                    predictions=model.forward(voltageTimeSeries[:-1])
+                    error=loss(predictions,voltageTimeSeries[1:])
+                    validation_error=validation_error+error
+
+            logger.info("Validation error:{}".format(validation_error))
             #report
             if plotting:
             #  ax['Feeder'].clear()

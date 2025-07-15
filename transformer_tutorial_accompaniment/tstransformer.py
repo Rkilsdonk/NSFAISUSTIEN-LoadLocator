@@ -61,4 +61,34 @@ class TsTransformer(nn.Module):
         #block ordering is normalize, attention, normalize, feedforwards
         output=self.decode(x)#return to shape,
         return output
-
+class LSTMGS(nn.Module):
+    def __init__(self, d_input: int,d_output:int,d_latent:int,numblocks:int):
+        super().__init__()
+        self.LSTM=nn.LSTM(input_size=d_input,hidden_size=d_latent, num_layers=numblocks)
+        self.h_0=nn.Parameter(torch.randn([numblocks,d_latent])/(numblocks*d_latent))
+        self.c_0=nn.Parameter(torch.randn([numblocks,d_latent])/(numblocks*d_latent))
+        self.downproject=nn.Linear(in_features=d_latent,out_features=d_output)
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        output=self.LSTM(x,(self.h_0,self.c_0))
+        output=self.downproject(output[0])
+        return output
+class ActiveTransformer(nn.Module):
+    def __init__(self, d_input: int,d_output:int,d_latent:int,numblocks:int,nheads:int, dropout: float = 0.1, max_len: int = 5000):
+        super().__init__()
+        self.project=nn.Linear(in_features=d_input,out_features=d_latent)
+        self.encode=PositionalEncoding(d_latent)
+        self.mainblocks=nn.ModuleList()
+        for i in range(numblocks):
+            self.mainblocks.append(nn.TransformerEncoderLayer(d_model=d_latent,nhead=nheads,dim_feedforward=d_latent,dropout=dropout))
+        self.decode=nn.LazyLinear(d_output)
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        output=self.project(x) #Mulitply x by key 1 to get it to size, should have shape [T*embedding]
+        output=self.encode(output) #Add dimensions
+        mask=nn.Transformer.generate_square_subsequent_mask(output.size(0))
+        for block in self.mainblocks:
+            output=block(output,src_mask=mask,is_causal=True)
+        output.squeeze(1)
+        
+        #block ordering is normalize, attention, normalize, feedforwards
+        output=self.decode(x)#return to shape,
+        return output

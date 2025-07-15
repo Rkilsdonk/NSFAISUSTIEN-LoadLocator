@@ -1,1 +1,0 @@
-This file exist only to maintaing folder structure for the output (GIT)

@@ -46,15 +46,16 @@ def destroy_federate(fed):
 
 if __name__ == "__main__":
     device = pt.accelerator.current_accelerator().type if pt.accelerator.is_available() else "cpu"
-    parser = argparse.ArgumentParser(description='')
-    parser.add_argument('-c', '--case_num',
-                        help='Case number, must be either "1b" or "1c"',
-                        nargs=1)
-    args = parser.parse_args()
+    logger.info(device)
+    # parser = argparse.ArgumentParser(description='')
+    # parser.add_argument('-c', '--case_num',
+    #                     help='Case number, must be either "1b" or "1c"',
+    #                     nargs=1)
+    # args = parser.parse_args()
 
-    #################################  Registering  federate from json  ########################################
-    case_num = str(args.case_num[0])
-    fed = h.helicsCreateCombinationFederateFromConfig(f"{case_num}_Control.json")
+    # #################################  Registering  federate from json  ########################################
+    # case_num = str(args.case_num[0])
+    fed = h.helicsCreateCombinationFederateFromConfig(f"RLControl.json")
     # h.helicsFederateRegisterInterfaces(fed, "Control.json")
     federate_name = h.helicsFederateGetName(fed)
     logger.info("HELICS Version: {}".format(h.helicsGetVersion()))
@@ -79,8 +80,8 @@ if __name__ == "__main__":
     h.helicsFederateEnterExecutingMode(fed)
 
     plotting = False ## Adjust this flag to visulaize the control actions aas the simulation progresses
-    hours = 24
-    val_switchHour=23
+    hours = 72
+    val_switchHour=70
     total_inteval = int(60 * 60 * hours)
     val_interval= int(60*60*val_switchHour)
     grantedtime = -1
@@ -91,8 +92,9 @@ if __name__ == "__main__":
     EV_data = {}
     time_sim = []
     feeder_real_power = []
-    LoadInfo=False
+    LoadInfo=True
     UncSeek=False
+    Persistant=True
     olooplen=5
     predictederror=0
     if plotting:
@@ -143,8 +145,9 @@ if __name__ == "__main__":
             # 1) parse JSON → dict
             data = json.loads(inputvolts)
 
-# 2) fix ordering of meters & phases
-            meter_keys = sorted(data.keys())    
+
+ # 2) fix ordering of meters & phases
+            meter_keys = sorted(data.keys())
             if (metercount!=None):
                 pt.randperm(len(meter_keys))
                 meter_keys=meter_keys[0:metercount]
@@ -158,7 +161,7 @@ if __name__ == "__main__":
 # 3) build a list: [ [ real, imag, … ], … ]
             vals = []
             for m in meter_keys:
-                for ph in phase_keys:
+                for ph in (data[m]):
                     c = parse_voltage(data[m][ph])
                     vals.append(c[0])
                     vals.append(c[1])
@@ -173,25 +176,26 @@ if __name__ == "__main__":
             width=voltageTimeSeries.size(1)
             #logger.info(voltageTimeSeries.size())
             if(LoadInfo==False):
-                model=TsTransformer(d_input=width,d_output=width,d_latent=2048,numblocks=6,nheads=8)
+                model=TsTransformer(d_input=width,d_output=width,d_latent=2048,numblocks=6,nheads=8,persistance=Persistant)
                 #model=LSTMGS(d_input=width,d_output=width,d_latent=2048,numblocks=10)
             elif(UncSeek==True):
-                model=ActiveTransformer(d_input=width,d_output=(width-endpoint_count+1),d_latent=2048,numblocks=6,nheads=8)
+                model=ActiveTransformer(d_input=width,d_output=(width-endpoint_count+1),d_latent=2048,numblocks=6,nheads=8,persistance=Persistant)
             else:
-                model=TsTransformer(d_input=width,d_output=(width-endpoint_count),d_latent=2048,numblocks=6,nheads=8)
+                model=TsTransformer(d_input=width,d_output=(width-endpoint_count),d_latent=2048,numblocks=6,nheads=8,persistance=Persistant)
             optimizer = pt.optim.SGD(model.parameters(True), lr=learning_rate)
             model.train()
+
         if(t!=0):
             optimizer.zero_grad()
             data = json.loads(inputvolts)
-
-# 2) fix ordering of meters & phases
+            
+            
             
 
 # 3) build a nested list: [ [ [real, imag], … ], … ]
             vals = []
             for m in meter_keys:
-                for ph in phase_keys:
+                for ph in data[m]:
                     c = parse_voltage(data[m][ph])
                     vals.append(c[0])
                     vals.append(c[1])
@@ -204,13 +208,30 @@ if __name__ == "__main__":
             #train                
             voltageTimeSeries=pt.cat((voltageTimeSeries,t_real_imag.unsqueeze(0)))
             #logger.info(voltageTimeSeries.shape)
-            logger.info(loss(voltageTimeSeries[-1:],voltageTimeSeries[1:]))
+            #logger.info(loss(voltageTimeSeries[-1:],voltageTimeSeries[1:]))
+            #logger.info(loss(voltageTimeSeries[0],voltageTimeSeries[-1]))
             error=None
+            voltage_changes = None
+            if(LoadInfo):
+                voltage_changes=pt.abs(voltageTimeSeries[1:,:-endpoint_count] - voltageTimeSeries[:-1,:-endpoint_count])
+            else:
+                voltage_changes=pt.abs(voltageTimeSeries[1:] - voltageTimeSeries[:-1])
+            logger.info(f"Mean voltage change: {voltage_changes.mean()}")
+            logger.info(f"Std voltage change: {voltage_changes.std()}")
+            logger.info(f"Max voltage change: {voltage_changes.max()}")
+            logger.info(f"MS Voltage change: {loss(voltageTimeSeries[1:], voltageTimeSeries[:-1])}")
+            logger.info(f"Next step persistance loss:{loss(voltageTimeSeries[-1],voltageTimeSeries[-2])}")
+            logger.info(f"Next step mean change{pt.mean(pt.abs(voltageTimeSeries[-1]-voltageTimeSeries[-2]))}")
+            logger.info(f"Next step max change{pt.max(pt.abs(voltageTimeSeries[-1]-voltageTimeSeries[-2]))}")
+
+        # 2) fix ordering of meters & phases
             if(LoadInfo==False and t<val_interval):#valdiationsplit
+                predictions=model.forward(voltageTimeSeries[:-1])
+                logger.info(f"Next Round Error{loss(voltageTimeSeries[-1],predictions[-1])}")
                 for i in range(olooplen):
                     predictions=model.forward(voltageTimeSeries[:-1])#normalize model to prevent gradient blowup
                     error=loss(predictions,voltageTimeSeries[1:])
-                    logger.info(loss(predictions[-1],voltageTimeSeries[-2]))
+                    logger.info(f"Oloop error {i}:{error}")
                     #logger.info(predictions)
                     error.backward()
                     optimizer.step()
@@ -221,12 +242,14 @@ if __name__ == "__main__":
                 #logger.info(pt.argmin(voltageTimeSeries[1:]-predictions))
 
             if(LoadInfo==True and UncSeek==False and t<val_interval):#valdiationsplit
+                predictions=model.forward(voltageTimeSeries[:-1])
+                logger.info(f"Next Round Error{loss(voltageTimeSeries[-1,:-endpoint_count],predictions[-1])}")
                 for i in range(olooplen):
                     predictions=model.forward(voltageTimeSeries[:-1])#normalize model to prevent gradient blowup
-                    logger.info(predictions.shape)
-                    logger.info(voltageTimeSeries[1:,:-endpoint_count].shape)
+                    #logger.info(predictions.shape)
+                    #logger.info(voltageTimeSeries[1:,:-endpoint_count].shape)
                     error=loss(predictions,voltageTimeSeries[1:,:-endpoint_count])
-                    logger.info(error)
+                    logger.info(f"Oloop error {i}:{error}")
                     #logger.info(predictions)
                     error.backward()
                     optimizer.step()
@@ -241,12 +264,12 @@ if __name__ == "__main__":
 
                             h.helicsMessageSetString(msg, str(complex(commandCurrentVals[-i])))
                             status = h.helicsEndpointSendMessage(end, msg)
-                    logger.info(commandCurrentVals)
+                    #logger.info(commandCurrentVals)
                     voltageTimeSeries[:-1,-i:]=0
-                offeffect=model.forward(voltageTimeSeries)[-1]
-                voltageTimeSeries[:-1,-i:]=1
-                oneffect=model.forward(voltageTimeSeries)[-1]
-                logger.info(offeffect-oneffect)
+                # offeffect=model.forward(voltageTimeSeries)[-1]
+                # voltageTimeSeries[:-1,-i:]=1
+                # oneffect=model.forward(voltageTimeSeries)[-1]
+                # logger.info(offeffect-oneffect)
         
                 #infer                #
                 #logger.info(voltageTimeSeries[1:]-predictions)
@@ -254,12 +277,15 @@ if __name__ == "__main__":
                 #logger.info(pt.argmin(voltageTimeSeries[1:]-predictions))
             
             if(UncSeek==True and t<val_interval):
+                predictions=model.forward(voltageTimeSeries[:-1])
+                error=pt.mean(input=(loss(predictions[:,:-1],voltageTimeSeries[1:,:-endpoint_count])),dim=1)
+                logger.info(f"Next Round Error:{error[-1]}")
                 for i in range(olooplen):
                     predictions=model.forward(voltageTimeSeries[:-1])#normalize model to prevent gradient blowup
                     error=pt.mean(input=(loss(predictions[:,:-1],voltageTimeSeries[1:,:-endpoint_count])),dim=1)
                     uncerror=loss(predictions[1:,-1],error[:-1])#Uncertainty quantification
                     finerror=pt.mean(error)+pt.mean(uncerror)
-                    logger.info(error[-1])
+                    #logger.info(error[-1])
                     #logger.info(predictions)
                     finerror.backward()
                     optimizer.step()
@@ -273,7 +299,7 @@ if __name__ == "__main__":
                 jacobian=jacobian[-1,-endpoint_count:]
                 #try reversing
                 jacobian=jacobian*-1
-                logger.info(jacobian)
+                #logger.info(jacobian)
                 for i in range(endpoint_count):
                     if(jacobian[i]<0):
                         commandCurrentVals[i]=0
@@ -296,7 +322,7 @@ if __name__ == "__main__":
                             h.helicsMessageSetString(msg, '200000+0j')
                             status = h.helicsEndpointSendMessage(end, msg)
                 commandTimeSeries=pt.cat((commandTimeSeries,commandCurrentVals.unsqueeze(0)))
-                logger.info(commandCurrentVals)
+                #logger.info(commandCurrentVals)
                             
                 #infer
                 # if(LoadInfo==True):
@@ -321,8 +347,7 @@ if __name__ == "__main__":
                     predictions=model.forward(voltageTimeSeries[:-1])
                     error=loss(predictions,voltageTimeSeries[1:])
                     validation_error=validation_error+error
-
-            logger.info("Validation error:{}".format(validation_error))
+                logger.info("Validation error:{}".format(validation_error))
             #report
             if plotting:
             #  ax['Feeder'].clear()
@@ -403,9 +428,16 @@ if __name__ == "__main__":
     # EV_data["time"] = time_sim
     # EV_data["feeder_load"] = feeder_real_power
     # pd.DataFrame.from_dict(data=EV_data).to_csv(f"{case_num}_EV_Outputs.csv", header=True)
-
+    def jacobianLimit(x):
+        # Function that returns only the output slice we care about
+                    full_output = model(x)
+                    return full_output[-1]
+    if(LoadInfo):
+        jacobian=pt.func.jacrev(jacobianLimit)(voltageTimeSeries)
+        pt.save(model,"jacobian.pt")
     t = 60 * 60 * 24
-    while grantedtime < t:
-        grantedtime = h.helicsFederateRequestTime(fed, t)
+    # while grantedtime < t:
+    #     grantedtime = h.helicsFederateRequestTime(fed, t)
+    pt.save(model,"model.pt")
     logger.info("{}: Destroying federate".format(federate_name))
     destroy_federate(fed)

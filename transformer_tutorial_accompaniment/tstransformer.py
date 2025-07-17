@@ -42,7 +42,7 @@ class PositionalEncoding(nn.Module):
         x = x + self.pe[:x.size(0)]
         return self.dropout(x)
 class TsTransformer(nn.Module):
-    def __init__(self, d_input: int,d_output:int,d_latent:int,numblocks:int,nheads:int, dropout: float = 0.1, max_len: int = 5000):
+    def __init__(self, d_input: int,d_output:int,d_latent:int,numblocks:int,nheads:int, dropout: float = 0.1, max_len: int = 5000,persistance=False):
         super().__init__()
         self.project=nn.Linear(in_features=d_input,out_features=d_latent)
         self.encode=PositionalEncoding(d_latent)
@@ -50,6 +50,10 @@ class TsTransformer(nn.Module):
         for i in range(numblocks):
             self.mainblocks.append(nn.TransformerEncoderLayer(d_model=d_latent,nhead=nheads,dim_feedforward=d_latent,dropout=dropout))
         self.decode=nn.LazyLinear(d_output)
+        if(persistance):
+            self.persistance=True
+        else:
+            self.persistance=False
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         output=self.project(x) #Mulitply x by key 1 to get it to size, should have shape [T*embedding]
         output=self.encode(output) #Add dimensions
@@ -60,20 +64,28 @@ class TsTransformer(nn.Module):
         
         #block ordering is normalize, attention, normalize, feedforwards
         output=self.decode(x)#return to shape,
+        if(self.persistance):
+            output=output+x[:output.shape[0],:output.shape[1]]
         return output
 class LSTMGS(nn.Module):
-    def __init__(self, d_input: int,d_output:int,d_latent:int,numblocks:int):
+    def __init__(self, d_input: int,d_output:int,d_latent:int,numblocks:int,persistance=False):
         super().__init__()
         self.LSTM=nn.LSTM(input_size=d_input,hidden_size=d_latent, num_layers=numblocks)
         self.h_0=nn.Parameter(torch.randn([numblocks,d_latent])/(numblocks*d_latent))
         self.c_0=nn.Parameter(torch.randn([numblocks,d_latent])/(numblocks*d_latent))
         self.downproject=nn.Linear(in_features=d_latent,out_features=d_output)
+        if(persistance):
+            self.persistance=True
+        else:
+            self.persistance=False
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         output=self.LSTM(x,(self.h_0,self.c_0))
         output=self.downproject(output[0])
+        if(self.persistance):
+            output=output+x[:output.shape[0],:output.shape[1]]
         return output
 class ActiveTransformer(nn.Module):
-    def __init__(self, d_input: int,d_output:int,d_latent:int,numblocks:int,nheads:int, dropout: float = 0.1, max_len: int = 5000):
+    def __init__(self, d_input: int,d_output:int,d_latent:int,numblocks:int,nheads:int, dropout: float = 0.1, max_len: int = 5000,persistance=False):
         super().__init__()
         self.project=nn.Linear(in_features=d_input,out_features=d_latent)
         self.encode=PositionalEncoding(d_latent)
@@ -81,6 +93,10 @@ class ActiveTransformer(nn.Module):
         for i in range(numblocks):
             self.mainblocks.append(nn.TransformerEncoderLayer(d_model=d_latent,nhead=nheads,dim_feedforward=d_latent,dropout=dropout))
         self.decode=nn.LazyLinear(d_output)
+        if(persistance):
+            self.persistance=True
+        else:
+            self.persistance=False
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         output=self.project(x) #Mulitply x by key 1 to get it to size, should have shape [T*embedding]
         output=self.encode(output) #Add dimensions
@@ -91,4 +107,6 @@ class ActiveTransformer(nn.Module):
         
         #block ordering is normalize, attention, normalize, feedforwards
         output=self.decode(x)#return to shape,
+        if(self.persistance):
+            output=output+x[:output.shape[0],:output.shape[1]]
         return output

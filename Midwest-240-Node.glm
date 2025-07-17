@@ -13,11 +13,16 @@ module powerflow {
 	NR_iteration_limit 100;
 	line_capacitance TRUE;
 };
-
+module connection;
+module market;
 class player {	//this only needs to be done once
 	complex value;	//at the beginning of the glm file
 }
 
+object helics_msg {
+    name Midwest-240-Node.glm;
+    configure Midwest-240-Node.json;
+};
 object player {
 	name TphaseLOAD_1;
 	file year_min_l/load_profile_PQ_1.csv;
@@ -9623,3 +9628,162 @@ object player {
 	loop 1;
 };
 
+
+object switch {
+    name swEV6;
+    phases AN;
+    from nbus3097;
+    to EV6;
+    status CLOSED;
+};
+
+
+object load {
+    name EV6;
+    phases "AN";
+    voltage_A 2401.7771;
+    voltage_B -1200.8886-2080.000j;
+    voltage_C -1200.8886+2080.000j;
+    nominal_voltage 2401.7771;
+    constant_power_A 200000+0j;
+    object recorder {
+        property constant_power_A;
+        interval 60;
+        file output/1c_IEEE_123_feeder_0_EV6.csv;
+        in "2013-08-28 00:00:00";
+        out "2013-08-29 00:00:00";
+    };
+};
+
+
+
+object switch {
+    name swEV5;
+    phases BN;
+    from nbus2046;
+    to EV5;
+    status CLOSED;
+};
+
+object load {
+    name EV5;
+    phases "BN";
+    voltage_A 2401.7771;
+    voltage_B -1200.8886-2080.000j;
+    voltage_C -1200.8886+2080.000j;
+    nominal_voltage 2401.7771;
+    constant_power_B 200000+0j;
+    object recorder {
+        property constant_power_B;
+        interval 60;
+        file output/1c_IEEE_123_feeder_0_EV5.csv;
+        in "2013-08-28 00:00:00";
+        out "2013-08-29 00:00:00";
+    };
+};
+
+
+object switch {
+    name swEV4;
+    phases CN;
+    from nbus2022;
+    to EV4;
+    status CLOSED;
+};
+
+object load {
+    name EV4;
+    phases "CN";
+    voltage_A 2401.7771;
+    voltage_B -1200.8886-2080.000j;
+    voltage_C -1200.8886+2080.000j;
+    nominal_voltage 2401.7771;
+    constant_power_C 200000+0j;
+    object recorder {
+        property constant_power_C;
+        interval 60;
+        file output/1c_IEEE_123_feeder_0_EV4.csv;
+        in "2013-08-28 00:00:00";
+        out "2013-08-29 00:00:00";
+    };
+};
+
+
+
+object switch {
+    name swEV3;
+    phases AN;
+    from nbus3094;
+    to EV3;
+    status CLOSED;
+};
+
+
+object load {
+    name EV3;
+    phases "AN";
+    voltage_A 2401.7771;
+    voltage_B -1200.8886-2080.000j;
+    voltage_C -1200.8886+2080.000j;
+    nominal_voltage 2401.7771;
+    constant_power_A 200000+0j;
+    object recorder {
+        property constant_power_A;
+        interval 60;
+        file output/1c_IEEE_123_feeder_0_EV3.csv;
+        in "2013-08-28 00:00:00";
+        out "2013-08-29 00:00:00";
+    };
+};
+
+object switch {
+    name swEV2;
+    phases BN;
+    from nbus3120;
+    to EV2;
+    status CLOSED;
+};
+
+
+object load {
+    name EV2;
+    phases "BN";
+    voltage_A 2401.7771;
+    voltage_B -1200.8886-2080.000j;
+    voltage_C -1200.8886+2080.000j;
+    nominal_voltage 2401.7771;
+    constant_power_B 200000+0j;
+    object recorder {
+        property constant_power_B;
+        interval 60;
+        file output/1c_IEEE_123_feeder_0_EV2.csv;
+        in "2013-08-28 00:00:00";
+        out "2013-08-29 00:00:00";
+    };
+};
+
+
+object switch {
+    name swEV1;
+    phases CN;
+    from nbus3161;
+    to EV1;
+    status CLOSED;
+};
+
+object load {
+    name EV1;
+    phases "CN";
+    voltage_A 2401.7771;
+    voltage_B -1200.8886-2080.000j;
+    voltage_C -1200.8886+2080.000j;
+    nominal_voltage 2401.7771;
+    constant_power_C 200000+0j;
+    object recorder {
+        property constant_power_C;
+        interval 60;
+        file output/1c_IEEE_123_feeder_0_EV1.csv;
+        in "2013-08-28 00:00:00";
+        out "2013-08-29 00:00:00";
+    };
+};

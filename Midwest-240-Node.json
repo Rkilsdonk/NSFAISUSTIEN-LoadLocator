@@ -1,0 +1,308 @@
+{
+  "coreInit": "--federates=1",
+  "coreName": "Distribution Federate",
+  "coreType": "zmq",
+  "name": "DistributionSim",
+  "offset": 0.0,
+  "period": 60,
+  "timeDelta": 1.0,
+  "logfile": "output.log",
+  "log_level": "warning",
+  "publications": [
+    {
+      "global": true,
+      "name": "Midwest-240N/statedump",
+      "type": "string",
+      "info": {
+        "message_type": "JSON",
+        "publication_info": {"nload_load_1011":["measured_voltage_1","measured_voltage_2"],
+"nload_load_1012":["measured_voltage_1","measured_voltage_2"],
+"nload_load_1014":["measured_voltage_1","measured_voltage_2"],
+"nload_load_1015":["measured_voltage_1","measured_voltage_2"],
+"nload_load_1016":["measured_voltage_1","measured_voltage_2"],
+"nload_load_1017":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2008":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2009":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2014":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2015":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2016":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2017":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2018":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2020":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2022":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2023":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2024":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2025":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2028":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2031":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2045":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2046":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2047":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2048":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2049":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2050":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2051":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2054":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2055":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2056":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2059":["measured_voltage_1","measured_voltage_2"],
+"nload_load_2060":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3009":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3010":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3011":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3012":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3013":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3014":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3016":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3017":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3018":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3019":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3020":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3021":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3023":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3024":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3025":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3026":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3027":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3028":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3029":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3041":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3042":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3043":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3044":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3045":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3056":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3057":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3058":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3059":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3060":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3061":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3062":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3063":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3064":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3065":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3066":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3067":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3083":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3084":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3085":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3086":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3087":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3088":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3089":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3090":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3091":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3093":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3094":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3095":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3096":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3097":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3098":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3099":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3101":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3102":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3103":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3104":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3105":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3106":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3108":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3109":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3110":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3111":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3112":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3114":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3115":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3116":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3117":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3120":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3121":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3122":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3123":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3124":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3125":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3126":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3127":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3128":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3129":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3130":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3131":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3132":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3134":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3135":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3136":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3137":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3138":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3141":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3142":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3143":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3144":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3145":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3146":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3147":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3148":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3149":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3150":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3151":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3152":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3153":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3154":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3155":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3157":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3158":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3159":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3160":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3161":["measured_voltage_1","measured_voltage_2"],
+"nload_load_3162":["measured_voltage_1","measured_voltage_2"],
+"nload_load_1003":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_1004":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_1005":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_1006":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_1007":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_1008":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_1009":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_1010":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_1013":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2002":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2003":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2005":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2010":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2011":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2029":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2030":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2032":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2034":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2035":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2037":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2040":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2041":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2042":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2043":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2052":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2053":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_2058":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3002":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3004":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3006":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3007":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3031":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3032":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3033":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3034":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3035":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3036":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3037":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3038":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3039":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3047":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3048":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3049":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3050":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3051":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3052":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3054":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3070":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3071":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3072":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3073":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3074":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3077":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3078":["measured_voltage_A","measured_voltage_B","measured_voltage_C"],
+"nload_load_3081":["measured_voltage_A","measured_voltage_B","measured_voltage_C"]
+}
+      }
+    }
+  ],
+  "subscriptions": [],
+  "endpoints": [
+    {
+      "global": true,
+      "key": "IEEE_123_feeder_0/EV6",
+      "destination": "EV_Controller/EV6",
+      "info": {
+        "publication_info": {
+          "object": "EV6",
+          "property": "constant_power_A"
+        },
+        "subscription_info": {
+          "object": "EV6",
+          "property": "constant_power_A"
+        }
+      }
+    },
+    {
+      "global": true,
+      "key": "IEEE_123_feeder_0/EV5",
+      "destination": "EV_Controller/EV5",
+      "info": {
+        "publication_info": {
+          "object": "EV5",
+          "property": "constant_power_B"
+        },
+        "subscription_info": {
+          "object": "EV5",
+          "property": "constant_power_B"
+        }
+      }
+    },
+    {
+      "global": true,
+      "key": "IEEE_123_feeder_0/EV4",
+      "destination": "EV_Controller/EV4",
+      "info": {
+        "publication_info": {
+          "object": "EV4",
+          "property": "constant_power_C"
+        },
+        "subscription_info": {
+          "object": "EV4",
+          "property": "constant_power_C"
+        }
+      }
+    },
+    {
+      "global": true,
+      "key": "IEEE_123_feeder_0/EV3",
+      "destination": "EV_Controller/EV3",
+      "info": {
+        "publication_info": {
+          "object": "EV3",
+          "property": "constant_power_A"
+        },
+        "subscription_info": {
+          "object": "EV3",
+          "property": "constant_power_A"
+        }
+      }
+    },
+    {
+      "global": true,
+      "key": "IEEE_123_feeder_0/EV2",
+      "destination": "EV_Controller/EV2",
+      "info": {
+        "publication_info": {
+          "object": "EV2",
+          "property": "constant_power_B"
+        },
+        "subscription_info": {
+          "object": "EV2",
+          "property": "constant_power_B"
+        }
+      }
+    },
+    {
+      "global": true,
+      "key": "IEEE_123_feeder_0/EV1",
+      "destination": "EV_Controller/EV1",
+      "info": {
+        "publication_info": {
+          "object": "EV1",
+          "property": "constant_power_C"
+        },
+        "subscription_info": {
+          "object": "EV1",
+          "property": "constant_power_C"
+        }
+      }
+    }
+  ]
+}

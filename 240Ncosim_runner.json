@@ -1,0 +1,18 @@
+{
+    "broker": true,
+    "federates":[
+        {
+            "directory":".",
+            "exec":"python RL_controller.py -c 1c",
+            "host":"localhost",
+            "name":"RLController"
+        },
+        {
+            "directory":".",
+            "exec":"gridlabd Midwest-240-Node.glm",
+            "host":"localhost",
+            "name":"240Gridlabd"
+        }
+    ],
+    "name":"1c-T-D-Cosimulation-HELICSRunner"
+}

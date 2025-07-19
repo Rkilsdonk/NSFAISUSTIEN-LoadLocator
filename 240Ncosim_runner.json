@@ -3,13 +3,13 @@
     "federates":[
         {
             "directory":".",
-            "exec":"python RL_controller.py -c 1c",
+            "exec":"python RL_Controller.py -c 1c",
             "host":"localhost",
             "name":"RLController"
         },
         {
             "directory":".",
-            "exec":"gridlabd Midwest-240-Node.glm",
+            "exec":"sh /mmfs1/home/robert.kilsdonk/software/GridLAB-D/bin/gridlabd.sh -v Midwest-240-Node.glm",
             "host":"localhost",
             "name":"240Gridlabd"
         }

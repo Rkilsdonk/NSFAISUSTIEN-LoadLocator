@@ -12,7 +12,6 @@ import pandas as pd
 import numpy as np
 import argparse
 import torch as pt
-import torch_geometric as ptg
 import json as json
 import torch.nn as nn
 import torch.nn.functional as F

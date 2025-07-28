@@ -1,0 +1,13 @@
+#PBS -q gpus
+#PBS -N RL_ControllerTest2
+#PBS -l select=1:mem=16gb:ncpus=4:ngpus=1
+#PBS -l walltime=24:00:00
+## replace "x-ccast-prj-" below with your "x-ccast-prj-hpirim"
+#PBS -W group_list=x-ccast-prj-hpirim
+
+module load cuda/11.4
+module load cudnn/8.4
+
+cd /mmfs1/home/robert.kilsdonk/NSFAISUSTIEN-LoadLocator
+
+helics run --path 240Ncosim_runner.json

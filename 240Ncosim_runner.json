@@ -9,7 +9,7 @@
         },
         {
             "directory":".",
-            "exec":"sh /mmfs1/home/robert.kilsdonk/software/GridLAB-D/bin/gridlabd.sh Midwest-240-Node.glm",
+            "exec":"sh /mmfs1/home/robert.kilsdonk/software/GridLAB-D/bin/gridlabd.sh -v Midwest-240-Node.glm",
             "host":"localhost",
             "name":"240Gridlabd"
         }
